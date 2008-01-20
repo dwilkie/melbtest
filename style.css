@@ -1,0 +1,84 @@
+h1
+{
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: #663300;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p.success
+{
+    font-weight: bold;
+    border: 2px solid green;
+}
+
+div.errors
+{
+    font-weight:bold;
+    border: 2px solid red;
+}
+
+form.feedback p
+{
+    margin-top: 1em;
+}
+
+form.feedback label.text
+{
+    width: 10em;
+    float: left;
+    text-align: right;
+    margin-right: 0.5em;
+    display: block;
+}
+
+form.feedback input.button
+{
+    color: #f30000;
+    font-weight: bold;
+    background: #d1d2d4;
+    text-align: center;
+    width: auto;
+}
+
+form.feedback input
+{
+    margin-bottom: .5em;
+}
+
+form.feedback fieldset.main
+{
+    margin-top: 2em;
+    border: 5px solid green;
+    padding: 1em;
+}
+
+form.feedback fieldset.main legend
+{
+    font-weight: bold;
+    color: #000;
+    background: #008cc6;
+    border: 1px solid green;
+    padding: .5em .5em;
+}
+
+form.feedback fieldset.sub
+{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+form.feedback fieldset.sub legend
+{
+    font-weight: bold;
+    color: #000;
+    background: #008cc6;
+    border: 1px solid green;
+    padding: .2em .2em;
+}
+div.footer
+{
+        text-align: center;
+        font-size: 0.8em;
+}
+
