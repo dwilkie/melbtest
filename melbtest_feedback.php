@@ -41,7 +41,7 @@ Author:
 
                 function validate_email($rString)
                 {
-                    $pattern = "^[a-zA-Z\_\-]+\.?[a-zA-Z\_\-]+@siemens\.com$";
+                    $pattern = "^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
                     return ereg($pattern, $rString);
                 }
 
@@ -64,10 +64,13 @@ Author:
                         $error = true;
                         $error_text = $error_text."\r\n".'<li>Contact Name not valid - '.valid_name_text().'</li>';
                     }
-                    if (!validate_name($_POST['company']))
+                    if (!empty($_POST['company']))
                     {
-                        $error = true;
-                        $error_text = $error_text."\r\n".'<li>Company not valid - '.valid_name_text().'</li>';
+                        if (!validate_name($_POST['company']))
+                        {
+                            $error = true;
+                            $error_text = $error_text."\r\n".'<li>Company not valid - '.valid_name_text().'</li>';
+                        }
                     }
                     if (!validate_email($_POST['email']))
                     {
@@ -100,6 +103,8 @@ Author:
                         // To send HTML mail, the Content-type header must be set
                         $headers  = 'MIME-Version: 1.0' . "\r\n";
                         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                        
+                        mail($to,$subject,$message,$headers);
                     }
                 }
             ?>
