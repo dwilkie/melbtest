@@ -136,8 +136,8 @@ Author:
                         <legend>Feedback</legend>
                         <p>
                             Friendiness of staff <br />
-                            
                             <?php
+                              echo $_POST["criteria_1_na"];
                               if ($_POST["criteria_1_na"]=="yes")
                               {
                                   echo '<input type="radio" id="criteria_1_na" name="criteria_1" value = "yes" checked = "true" />';
