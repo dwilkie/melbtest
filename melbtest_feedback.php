@@ -137,47 +137,46 @@ Author:
                         <p>
                             Friendiness of staff <br />
                             <?php
-                              echo $_POST["criteria_1_na"];
-                              if ($_POST["criteria_1_na"]=="yes")
+                              if ($_POST["criteria_1"]=="na")
                               {
-                                  echo '<input type="radio" id="criteria_1_na" name="criteria_1" value = "yes" checked = "true" />';
+                                  echo '<input type="radio" id="criteria_1_na" name="criteria_1" value = "na" checked = "true" />';
                               }
                               else
                               {
-                                  echo '<input type="radio" id="criteria_1_na" name="criteria_1" value = "yes" />';
+                                  echo '<input type="radio" id="criteria_1_na" name="criteria_1" value = "na" />';
                               }
                             ?>
                             <label for="criteria_1_na">N/A</label>
                             <?php
-                              if ($_POST["criteria_1_low"]=="yes")
+                              if ($_POST["criteria_1"]=="low")
                               {
-                                  echo '<input type="radio" id="criteria_1_low" name="criteria_1" value = "yes" checked = "true" />';
+                                  echo '<input type="radio" id="criteria_1_low" name="criteria_1" value = "low" checked = "true" />';
                               }
                               else
                               {
-                                  echo '<input type="radio" id="criteria_1_low" name="criteria_1" value = "yes" />';
+                                  echo '<input type="radio" id="criteria_1_low" name="criteria_1" value = "low" />';
                               }
                             ?>
                             <label for="criteria_1_low">Low</label>
                             <?php
-                              if ($_POST["criteria_1_medium"]=="yes")
+                              if ($_POST["criteria_1"]=="medium")
                               {
-                                  echo '<input type="radio" id="criteria_1_medium" name="criteria_1" value = "yes" checked = "true" />';
+                                  echo '<input type="radio" id="criteria_1_medium" name="criteria_1" value = "medium" checked = "true" />';
                               }
                               else
                               {
-                                  echo '<input type="radio" id="criteria_1_medium" name="criteria_1" value = "yes" />';
+                                  echo '<input type="radio" id="criteria_1_medium" name="criteria_1" value = "medium" />';
                               }
                             ?>
                             <label for="criteria_1_medium">Medium</label>
                             <?php
-                              if ($_POST["criteria_1_high"]=="yes")
+                              if ($_POST["criteria_1"]=="high")
                               {
-                                  echo '<input type="radio" id="criteria_1_high" name="criteria_1" value = "yes" checked = "true" />';
+                                  echo '<input type="radio" id="criteria_1_high" name="criteria_1" value = "high" checked = "true" />';
                               }
                               else
                               {
-                                  echo '<input type="radio" id="criteria_1_high" name="criteria_1" value = "yes" />';
+                                  echo '<input type="radio" id="criteria_1_high" name="criteria_1" value = "high" />';
                               }
                             ?>
                             <label for="criteria_1_high">High</label>
