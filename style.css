@@ -31,7 +31,7 @@ form.feedback p.feedback_criteria
 
 form.feedback label.text
 {
-    width: 10em;
+    width: 6.5em;
     float: left;
     text-align: right;
     margin-right: 0.5em;
@@ -61,7 +61,7 @@ form.feedback input
 form.feedback fieldset.main
 {
     margin-top: 2em;
-    border: 5px solid green;
+    border: 5px solid #663300;
     padding: 1em;
 }
 
@@ -70,7 +70,7 @@ form.feedback fieldset.main legend
     font-weight: bold;
     color: #000;
     background: #008cc6;
-    border: 1px solid green;
+    border: 1px solid #663300;
     padding: .5em .5em;
 }
 
@@ -78,6 +78,7 @@ form.feedback fieldset.sub
 {
     margin-top: 2em;
     margin-bottom: 2em;
+    border: 1px solid #663300;
 }
 
 form.feedback fieldset.sub legend
@@ -85,12 +86,12 @@ form.feedback fieldset.sub legend
     font-weight: bold;
     color: #000;
     background: #008cc6;
-    border: 1px solid green;
+    border: 1px solid #663300;
     padding: .2em .2em;
 }
 div.footer
 {
-        text-align: center;
-        font-size: 0.8em;
+    text-align: center;
+    font-size: 0.8em;
 }
 
