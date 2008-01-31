@@ -12,6 +12,7 @@ Author:
 
     Modified:
     Version 0.1; 2008-01-20 Document created - DCW
+    Version 0.2; 2008-01-31 
 
     todo:
 -->
@@ -19,7 +20,7 @@ Author:
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <title>Melbourne Testing Services Feedback Form</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
         <div class ="content">
@@ -77,44 +78,30 @@ Author:
                     {
                         echo '<div class="errors">'."\r\n".'<p>'."\r\n".'Could not submit form. Please <a href="#project_details">fix</a> the following errors:'."\r\n".'</p>'."\r\n".'<ol>'."\r\n".substr($error_text, 2).'</ol>'."\r\n".'</div>';
                     }
-					else
-					{
-								$to  = 'aidan@example.com' . ', '; // note the comma
-								$to .= 'wez@example.com';
+                    else
+                    {
+                        $to  = 'dwilkie@gmail.com'
 
-								// subject
-								$subject = 'Birthday Reminders for August';
+                        // subject
+                        $subject = 'Feedback from MTS website';
 
-								// message
-								$message = '
-								<html>
-								<head>
-								  <title>Birthday Reminders for August</title>
-								</head>
-								<body>
-								  <p>Here are the birthdays upcoming in August!</p>
-								  <table>
-									<tr>
-									  <th>Person</th><th>Day</th><th>Month</th><th>Year</th>
-									</tr>
-									<tr>
-									  <td>Joe</td><td>3rd</td><td>August</td><td>1970</td>
-									</tr>
-									<tr>
-									  <td>Sally</td><td>17th</td><td>August</td><td>1973</td>
-									</tr>
-								  </table>
-								</body>
-								</html>
-								';
+                        // message
+                        $message = '
+                        <html>
+                        <head>
+                          <title>Feedback from MTS website</title>
+                        </head>
+                        <body>
+                          <p>This is a test email</p>
+                        </body>
+                        </html>
+                        ';
 
-								// To send HTML mail, the Content-type header must be set
-								$headers  = 'MIME-Version: 1.0' . "\r\n";
-								$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
-					}
-				}
-                
+                        // To send HTML mail, the Content-type header must be set
+                        $headers  = 'MIME-Version: 1.0' . "\r\n";
+                        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                    }
+                }
             ?>
             <form class="feedback" action=<?php echo '"'.$_SERVER['PHP_SELF'].'"'; ?> method="post">
                     <fieldset class = "main">
@@ -141,27 +128,27 @@ Author:
                         <fieldset class ="sub">
                             <legend>Feedback</legend>
                             <p>
-	                            <?php
-	                                echo '<input type="radio" id="criteria_1_na" name="criteria_1" value = "'.$_POST["criteria_1_na"].'" />';
-	                            ?>
-                       			<label for="criteria_1_na">N/A</label>
-	                            <?php
-	                                echo '<input type="radio" id="criteria_1_low" name="criteria_1" value = "'.$_POST["criteria_1_low"].'" />';
-	                            ?>
-                       			<label for="criteria_1_low">Low</label>
-	                            <?php
-	                                echo '<input type="radio" id="criteria_1_medium" name="criteria_1" value = "'.$_POST["criteria_1_medium"].'" />';
-	                            ?>
-		                        <label for="criteria_1_medium">Medium</label>
-	                            <?php
-	                                echo '<input type="radio" id="criteria_1_high" name="criteria_1" value = "'.$_POST["criteria_1_high"].'" />';
-	                            ?>
-		                        <label for="criteria_1_high">High</label>
-	                            <br />
-							</p>
+                              <?php
+                                  echo '<input type="radio" id="criteria_1_na" name="criteria_1" value = "'.$_POST["criteria_1_na"].'" />';
+                              ?>
+                             <label for="criteria_1_na">N/A</label>
+                              <?php
+                                  echo '<input type="radio" id="criteria_1_low" name="criteria_1" value = "'.$_POST["criteria_1_low"].'" />';
+                              ?>
+                             <label for="criteria_1_low">Low</label>
+                              <?php
+                                  echo '<input type="radio" id="criteria_1_medium" name="criteria_1" value = "'.$_POST["criteria_1_medium"].'" />';
+                              ?>
+                            <label for="criteria_1_medium">Medium</label>
+                              <?php
+                                  echo '<input type="radio" id="criteria_1_high" name="criteria_1" value = "'.$_POST["criteria_1_high"].'" />';
+                              ?>
+                            <label for="criteria_1_high">High</label>
+                              <br />
+              </p>
                         </fieldset>
-						<input class = "submit" type = "submit" id = "submit_form" name = "submit_form" value= "Submit" />
-                  	</fieldset>
+            <input class = "submit" type = "submit" id = "submit_form" name = "submit_form" value= "Submit" />
+                    </fieldset>
             </form>
         </div>
         <div class="footer">
