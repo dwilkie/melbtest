@@ -80,7 +80,7 @@ Author:
                     }
                     else
                     {
-                        $to  = 'dwilkie@gmail.com'
+                        $to  = 'dwilkie@gmail.com';
 
                         // subject
                         $subject = 'Feedback from MTS website';
