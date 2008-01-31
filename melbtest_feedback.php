@@ -83,7 +83,7 @@ Author:
                     }
                     else
                     {
-                        echo '<div class="success">'."\r\n".'<p>'."\r\n".'Successfully submitted form.'.'</div>';
+                        echo '<p class="success">Successfully submitted form.</p>';
                         
                         $to  = 'dwilkie@gmail.com';
 
@@ -135,7 +135,7 @@ Author:
                     <fieldset class ="sub">
                         <legend>Feedback</legend>
                         <p>
-                            Friendiness of staff <br />
+                            Friendiness of staff: <br />
                             <?php
                               if ($_POST["criteria_1"]=="na")
                               {
