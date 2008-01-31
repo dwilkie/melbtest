@@ -79,10 +79,12 @@ Author:
                     }                
                     if($error)
                     {
-                        echo '<div class="errors">'."\r\n".'<p>'."\r\n".'Could not submit form. Please <a href="#project_details">fix</a> the following errors:'."\r\n".'</p>'."\r\n".'<ol>'."\r\n".substr($error_text, 2).'</ol>'."\r\n".'</div>';
+                        echo '<div class="errors">'."\r\n".'<p>'."\r\n".'Could not submit form. Please fix the following errors:'."\r\n".'</p>'."\r\n".'<ol>'."\r\n".substr($error_text, 2).'</ol>'."\r\n".'</div>';
                     }
                     else
                     {
+                        echo '<div class="success">'."\r\n".'<p>'."\r\n".'Successfully submitted form.'.'</div>';
+                        
                         $to  = 'dwilkie@gmail.com';
 
                         // subject
@@ -101,8 +103,8 @@ Author:
                         ';
 
                         // To send HTML mail, the Content-type header must be set
-                        $headers  = 'MIME-Version: 1.0' . "\r\n";
-                        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                        $headers  = 'MIME-Version: 1.0'."\r\n";
+                        $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
                         
                         mail($to,$subject,$message,$headers);
                     }
