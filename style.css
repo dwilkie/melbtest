@@ -36,8 +36,6 @@ form.feedback label.text
     text-align: right;
     margin-right: 0.5em;
     display: block;
-    font-style: normal;
-    font-weight: normal;
 }
 
 form.feedback input.button
@@ -47,6 +45,12 @@ form.feedback input.button
     background: #d1d2d4;
     text-align: center;
     width: auto;
+}
+
+form.feedback label.button
+{
+    font-style: normal;
+    font-weight: normal;
 }
 
 form.feedback input
