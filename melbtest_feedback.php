@@ -149,15 +149,36 @@ Author:
                             ?>
                             <label for="criteria_1_na">N/A</label>
                             <?php
-                                echo '<input type="radio" id="criteria_1_low" name="criteria_1" checked = "'.$_POST["criteria_1_low"].'" />';
+                              if ($_POST["criteria_1_low"]=="yes")
+                              {
+                                  echo '<input type="radio" id="criteria_1_low" name="criteria_1" value = "yes" checked = "true" />';
+                              }
+                              else
+                              {
+                                  echo '<input type="radio" id="criteria_1_low" name="criteria_1" value = "yes" />';
+                              }
                             ?>
                             <label for="criteria_1_low">Low</label>
                             <?php
-                                echo '<input type="radio" id="criteria_1_medium" name="criteria_1" checked = "'.$_POST["criteria_1_medium"].'" />';
+                              if ($_POST["criteria_1_medium"]=="yes")
+                              {
+                                  echo '<input type="radio" id="criteria_1_medium" name="criteria_1" value = "yes" checked = "true" />';
+                              }
+                              else
+                              {
+                                  echo '<input type="radio" id="criteria_1_medium" name="criteria_1" value = "yes" />';
+                              }
                             ?>
                             <label for="criteria_1_medium">Medium</label>
                             <?php
-                                echo '<input type="radio" id="criteria_1_high" name="criteria_1" checked = "'.$_POST["criteria_1_high"].'" />';
+                              if ($_POST["criteria_1_high"]=="yes")
+                              {
+                                  echo '<input type="radio" id="criteria_1_high" name="criteria_1" value = "yes" checked = "true" />';
+                              }
+                              else
+                              {
+                                  echo '<input type="radio" id="criteria_1_high" name="criteria_1" value = "yes" />';
+                              }
                             ?>
                             <label for="criteria_1_high">High</label>
                             <br />
