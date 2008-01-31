@@ -111,51 +111,52 @@ Author:
                 }
             ?>
             <form class="feedback" action=<?php echo '"'.$_SERVER['PHP_SELF'].'"'; ?> method="post">
-                    <fieldset class = "main">
-                        <legend>MTS Feedback Form</legend>
-                        <fieldset class ="sub">
-                            <legend>Customer Details</legend>
-                            <p id= "customer_details">
-                                <label class = "text" for = "contact_name">*Contact Name:</label>
-                                <?php
-                                    echo '<input type = "text" id="contact_name" name="contact_name" value = "'.$_POST["contact_name"].'" />';
-                                ?>
-                                <br />
-                                <label class = "text" for = "company">Company:</label>
-                                <?php
-                                    echo '<input type = "text" id="company" name="company" value = "'.$_POST["company"].'" />';
-                                ?>
-                                <br />
-                                <label class = "text" for = "email">*Email:</label>
-                                <?php
-                                    echo '<input type = "text" id="email" name="email" value = "'.$_POST["email"].'" />';
-                                ?>
-                            </p>
-                        </fieldset>
-                        <fieldset class ="sub">
-                            <legend>Feedback</legend>
-                            <p>
-                              <?php
-                                  echo '<input type="radio" id="criteria_1_na" name="criteria_1" value = "'.$_POST["criteria_1_na"].'" />';
-                              ?>
-                             <label for="criteria_1_na">N/A</label>
-                              <?php
-                                  echo '<input type="radio" id="criteria_1_low" name="criteria_1" value = "'.$_POST["criteria_1_low"].'" />';
-                              ?>
-                             <label for="criteria_1_low">Low</label>
-                              <?php
-                                  echo '<input type="radio" id="criteria_1_medium" name="criteria_1" value = "'.$_POST["criteria_1_medium"].'" />';
-                              ?>
-                            <label for="criteria_1_medium">Medium</label>
-                              <?php
-                                  echo '<input type="radio" id="criteria_1_high" name="criteria_1" value = "'.$_POST["criteria_1_high"].'" />';
-                              ?>
-                            <label for="criteria_1_high">High</label>
-                              <br />
-              </p>
-                        </fieldset>
-            <input class = "submit" type = "submit" id = "submit_form" name = "submit_form" value= "Submit" />
+                <fieldset class = "main">
+                    <legend>MTS Feedback Form</legend>
+                    <fieldset class ="sub">
+                        <legend>Customer Details</legend>
+                        <p id= "customer_details">
+                            <label class = "text" for = "contact_name">*Contact Name:</label>
+                            <?php
+                                echo '<input type = "text" id="contact_name" name="contact_name" value = "'.$_POST["contact_name"].'" />';
+                            ?>
+                            <br />
+                            <label class = "text" for = "company">Company:</label>
+                            <?php
+                                echo '<input type = "text" id="company" name="company" value = "'.$_POST["company"].'" />';
+                            ?>
+                            <br />
+                            <label class = "text" for = "email">*Email:</label>
+                            <?php
+                                echo '<input type = "text" id="email" name="email" value = "'.$_POST["email"].'" />';
+                            ?>
+                        </p>
                     </fieldset>
+                    <fieldset class ="sub">
+                        <legend>Feedback</legend>
+                        <p>
+                            Friendiness of staff <br />
+                            <?php
+                                echo '<input type="radio" id="criteria_1_na" name="criteria_1" checked = "'.$_POST["criteria_1_na"].'" />';
+                            ?>
+                            <label for="criteria_1_na">N/A</label>
+                            <?php
+                                echo '<input type="radio" id="criteria_1_low" name="criteria_1" checked = "'.$_POST["criteria_1_low"].'" />';
+                            ?>
+                            <label for="criteria_1_low">Low</label>
+                            <?php
+                                echo '<input type="radio" id="criteria_1_medium" name="criteria_1" checked = "'.$_POST["criteria_1_medium"].'" />';
+                            ?>
+                            <label for="criteria_1_medium">Medium</label>
+                            <?php
+                                echo '<input type="radio" id="criteria_1_high" name="criteria_1" checked = "'.$_POST["criteria_1_high"].'" />';
+                            ?>
+                            <label for="criteria_1_high">High</label>
+                            <br />
+                        </p>
+                    </fieldset>
+                    <input class = "submit" type = "submit" id = "submit_form" name = "submit_form" value= "Submit" />
+                </fieldset>
             </form>
         </div>
         <div class="footer">
