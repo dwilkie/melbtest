@@ -115,7 +115,7 @@ Author:
                     <legend>MTS Feedback Form</legend>
                     <fieldset class ="sub">
                         <legend>Customer Details</legend>
-                        <p id= "customer_details">
+                        <p class= "customer_details">
                             <label class = "text" for = "contact_name">*Contact Name:</label>
                             <?php
                                 echo '<input type = "text" id="contact_name" name="contact_name" value = "'.$_POST["contact_name"].'" />';
@@ -134,7 +134,7 @@ Author:
                     </fieldset>
                     <fieldset class ="sub">
                         <legend>Feedback</legend>
-                        <p>
+                        <p class = "feedback_criteria">
                             Friendiness of staff: <br />
                             <?php
                               if ($_POST["criteria_1"]=="na")

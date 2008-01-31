@@ -20,7 +20,11 @@ div.errors
 
 form.feedback p
 {
-    margin-top: 1em;
+  margin-top: 1em;
+}
+
+form.feedback p.feedback_criteria
+{
     font-style: italic;
     font-weight: bold;
 }
@@ -32,6 +36,8 @@ form.feedback label.text
     text-align: right;
     margin-right: 0.5em;
     display: block;
+    font-style: normal;
+    font-weight: normal;
 }
 
 form.feedback input.button
