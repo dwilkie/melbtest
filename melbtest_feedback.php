@@ -129,11 +129,11 @@
               <?php
                 if (isset($_POST["contact_name"]))
                 {
-                  echo '<input type = "text" id="contact_name" name="contact_name" value = "'.$_POST["contact_name"].'" />'.'"\r\n"';
+                  echo '<input type = "text" id="contact_name" name="contact_name" value = "'.$_POST["contact_name"].'" />'."\r\n";
                 }
                 else
                 {
-                  echo '<input type = "text" id="contact_name" name="contact_name" />'.'"\r\n"';
+                  echo '<input type = "text" id="contact_name" name="contact_name" />'."\r\n";
                 }
               ?>
               <br />
@@ -141,11 +141,11 @@
               <?php
                 if (isset($_POST["company"]))
                 {
-                  echo '<input type = "text" id="company" name="company" value = "'.$_POST["company"].'" />'.'"\r\n"';
+                  echo '<input type = "text" id="company" name="company" value = "'.$_POST["company"].'" />'."\r\n";
                 }
                 else
                 {
-                  echo '<input type = "text" id="company" name="company" />'.'"\r\n"';
+                  echo '<input type = "text" id="company" name="company" />'."\r\n";
                 }
               ?>
               <br />
@@ -153,11 +153,11 @@
               <?php
                 if (isset($_POST["email"]))
                 {
-                  echo '<input type = "text" id="email" name="email" value = "'.$_POST["email"].'" />'.'"\r\n"';
+                  echo '<input type = "text" id="email" name="email" value = "'.$_POST["email"].'" />'."\r\n";
                 }
                 else
                 {
-                  echo '<input type = "text" id="email" name="email" />'.'"\r\n"';
+                  echo '<input type = "text" id="email" name="email" />'."\r\n";
                 }
               ?>
             </p>
@@ -185,17 +185,17 @@
                 foreach ($criteria as $criterion)
                 {
                   // output a comment e.g. <!-- Criterion 1 (Friendliness of staff) -->
-                  echo '<!--Criterion '.$criterion_nr.' ('.$criterion.')-->'.'"\r\n"';
+                  echo '<!--Criterion '.$criterion_nr.' ('.$criterion.')-->'."\r\n";
                   
                   // output the actual criteria followed by a colon (:)
-                  echo $criterion.': <br />'.'"\r\n"';
+                  echo $criterion.': <br />'."\r\n";
                   
                   $rating_nr = 1;
 
                   foreach ($ratings as $rating)
                   {
                     // output a comment e.g. <!-- Rating 1 (N/A) -->
-                    echo '<!--Rating '.$rating_nr.' ('.$rating.')-->'.'"\r\n"';
+                    echo '<!--Rating '.$rating_nr.' ('.$rating.')-->'."\r\n";
                     
                     // Check if the current criteria has been already rated by the user
                     if (isset($_POST["criteria_".$criterion_nr]))
@@ -204,25 +204,25 @@
                       if ($_POST["criteria_".$criterion_nr]==$rating_nr)
                       {
                         // it was selected so select it again (so the user doesn't lose there selection)
-                        echo '<input type="radio" id="criteria_'.$criterion_nr.'_'.$rating_nr.'" name="criteria_'.$criterion_nr.'" value = "'.$rating_nr.'" checked = "true" />'.'"\r\n"';
+                        echo '<input type="radio" id="criteria_'.$criterion_nr.'_'.$rating_nr.'" name="criteria_'.$criterion_nr.'" value = "'.$rating_nr.'" checked = "true" />'."\r\n";
                       }
                       else
                       {
                         // it wasnt selected so leave it unchecked
-                        echo '<input type="radio" id="criteria_'.$criterion_nr.'_'.$rating_nr.'" name="criteria_'.$criterion_nr.'" value = "'.$rating_nr.'" />'.'"\r\n"';
+                        echo '<input type="radio" id="criteria_'.$criterion_nr.'_'.$rating_nr.'" name="criteria_'.$criterion_nr.'" value = "'.$rating_nr.'" />'."\r\n";
                       }
                     }
                     else
                     {
                       // The user has not yet rated this criteria so leave it unchecked
-                      echo '<input type="radio" id="criteria_'.$criterion_nr.'_'.$rating_nr.'" name="criteria_'.$criterion_nr.'" value = "'.$rating_nr.'" />'.'"\r\n"';
+                      echo '<input type="radio" id="criteria_'.$criterion_nr.'_'.$rating_nr.'" name="criteria_'.$criterion_nr.'" value = "'.$rating_nr.'" />'."\r\n";
                     }
                     
                     // Create the label for the rating
-                    echo '<label class = "button" for="criteria_'.$criterion_nr.'_'.$rating_nr.'">'.$rating.'</label>'.'"\r\n"';
+                    echo '<label class = "button" for="criteria_'.$criterion_nr.'_'.$rating_nr.'">'.$rating.'</label>'."\r\n";
                     $rating_nr += 1;
                   }
-                  echo '<br /><br />'.'"\r\n"';
+                  echo '<br /><br />'."\r\n";
                   $criterion_nr += 1;
                 }
               ?>
@@ -233,11 +233,11 @@
               <?php
                 if(isset($_POST["other_comments"]))
                 {
-                  echo '<textarea id="other_comments" name="other_comments" rows="10" cols="70" >'.$_POST["other_comments"].'</textarea>'.'"\r\n"';
+                  echo '<textarea id="other_comments" name="other_comments" rows="10" cols="70" >'.$_POST["other_comments"].'</textarea>'."\r\n";
                 }
                 else
                 {
-                  echo '<textarea id="other_comments" name="other_comments" rows="10" cols="70" ></textarea>'.'"\r\n"';
+                  echo '<textarea id="other_comments" name="other_comments" rows="10" cols="70" ></textarea>'."\r\n";
                 }
               ?>
             </p>
