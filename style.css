@@ -78,7 +78,8 @@ form.feedback fieldset.sub
 {
     margin-top: 2em;
     margin-bottom: 2em;
-    border: 1px solid #663300;
+    /* border: 1px solid #663300; */
+    border: none;
 }
 
 form.feedback fieldset.sub legend

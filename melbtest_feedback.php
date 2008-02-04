@@ -14,6 +14,7 @@ Author:
     Version 0.1; 2008-01-20 Document created - DCW
     Version 0.2; 2008-01-31 Fixed validation of email and company, updated div and class tags for styling,  modified feedback form to remember choices on invalid submissions, integrated emailing of results,
                                                added comments, added all feedback criteria and added other comments text area.
+    Version 0.3; 2008-02-02 Initialised all variables and simplyfied code for displaying criteria into a loop
 
     todo:
 -->
@@ -55,60 +56,64 @@ Author:
                 {
                     return 'Must only contain letters from A-Z';
                 }
-
-                $error = false;
-
-                if ($_POST['submit_form'])
+                
+                if (isset($_POST['submit_form']))
                 {
-                    if (!validate_name($_POST['contact_name']))
-                    {
-                        $error = true;
-                        $error_text = $error_text."\r\n".'<li>Contact Name not valid - '.valid_name_text().'</li>';
-                    }
-                    if (!empty($_POST['company']))
-                    {
-                        if (!validate_name($_POST['company']))
-                        {
-                            $error = true;
-                            $error_text = $error_text."\r\n".'<li>Company not valid - '.valid_name_text().'</li>';
-                        }
-                    }
-                    if (!validate_email($_POST['email']))
-                    {
-                        $error = true;
-                        $error_text = $error_text."\r\n".'<li>Email not valid</li>';
-                    }
-                    if($error)
-                    {
-                        echo '<div class="errors">'."\r\n".'<p>'."\r\n".'Could not submit form. Please fix the following errors:'."\r\n".'</p>'."\r\n".'<ol>'."\r\n".substr($error_text, 2).'</ol>'."\r\n".'</div>';
-                    }
-                    else
-                    {
-                        echo '<p class="success">Successfully submitted form.</p>';
+                  if ($_POST['submit_form'])
+                  {
+                      $error = false;
+                      $error_text = "";
 
-                        $to  = 'dwilkie@gmail.com';
+                      if (!validate_name($_POST['contact_name']))
+                      {
+                          $error = true;
+                          $error_text = $error_text."\r\n".'<li>Contact Name not valid - '.valid_name_text().'</li>';
+                      }
+                      if (!empty($_POST['company']))
+                      {
+                          if (!validate_name($_POST['company']))
+                          {
+                              $error = true;
+                              $error_text = $error_text."\r\n".'<li>Company not valid - '.valid_name_text().'</li>';
+                          }
+                      }
+                      if (!validate_email($_POST['email']))
+                      {
+                          $error = true;
+                          $error_text = $error_text."\r\n".'<li>Email not valid</li>';
+                      }
+                      if($error)
+                      {
+                          echo '<div class="errors">'."\r\n".'<p>'."\r\n".'Could not submit form. Please fix the following errors:'."\r\n".'</p>'."\r\n".'<ol>'."\r\n".substr($error_text, 2).'</ol>'."\r\n".'</div>';
+                      }
+                      else
+                      {
+                          echo '<p class="success">Successfully submitted form.</p>';
 
-                        // subject
-                        $subject = 'Feedback from MTS website';
+                          $to  = 'dwilkie@gmail.com';
 
-                        // message
-                        $message = '
-                        <html>
-                        <head>
-                          <title>Feedback from MTS website</title>
-                        </head>
-                        <body>
-                          <p>This is a test email</p>
-                        </body>
-                        </html>
-                        ';
+                          // subject
+                          $subject = 'Feedback from MTS website';
 
-                        // To send HTML mail, the Content-type header must be set
-                        $headers  = 'MIME-Version: 1.0'."\r\n";
-                        $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
+                          // message
+                          $message = '
+                          <html>
+                          <head>
+                            <title>Feedback from MTS website</title>
+                          </head>
+                          <body>
+                            <p>This is a test email</p>
+                          </body>
+                          </html>
+                          ';
 
-                        mail($to,$subject,$message,$headers);
-                    }
+                          // To send HTML mail, the Content-type header must be set
+                          $headers  = 'MIME-Version: 1.0'."\r\n";
+                          $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
+
+                          mail($to,$subject,$message,$headers);
+                      }
+                  }
                 }
             ?>
             <form class="feedback" action=<?php echo '"'.$_SERVER['PHP_SELF'].'"'; ?> method="post">
@@ -119,17 +124,38 @@ Author:
                         <p class= "customer_details">
                             <label class = "text" for = "contact_name">*Contact Name:</label>
                             <?php
-                                echo '<input type = "text" id="contact_name" name="contact_name" value = "'.$_POST["contact_name"].'" />';
+                                if (isset($_POST["contact_name"]))
+                                {
+                                  echo '<input type = "text" id="contact_name" name="contact_name" value = "'.$_POST["contact_name"].'" />';
+                                }
+                                else
+                                {
+                                  echo '<input type = "text" id="contact_name" name="contact_name" />';
+                                }
                             ?>
                             <br />
                             <label class = "text" for = "company">Company:</label>
                             <?php
-                                echo '<input type = "text" id="company" name="company" value = "'.$_POST["company"].'" />';
+                                if (isset($_POST["company"]))
+                                {
+                                  echo '<input type = "text" id="company" name="company" value = "'.$_POST["company"].'" />';
+                                }
+                                else
+                                {
+                                  echo '<input type = "text" id="company" name="company" />';
+                                }
                             ?>
                             <br />
                             <label class = "text" for = "email">*Email:</label>
                             <?php
-                                echo '<input type = "text" id="email" name="email" value = "'.$_POST["email"].'" />';
+                                if (isset($_POST["email"]))
+                                {
+                                  echo '<input type = "text" id="email" name="email" value = "'.$_POST["email"].'" />';
+                                }
+                                else
+                                {
+                                  echo '<input type = "text" id="email" name="email" />';
+                                }
                             ?>
                         </p>
                     </fieldset>
@@ -137,420 +163,70 @@ Author:
                         <legend>Feedback</legend>
                         <!--Friendlieness of staff (criteria_1) -->
                         <p class = "feedback_criteria">
-                            Friendiness of staff: <br />
-                            <?php
-                             // Check which if this radio button was selected before the submit button was pressed
-                              if ($_POST["criteria_1"]=="na")
+                        <?php
+                              $criterion_nr = 0;
+                              
+                              $criteria[0] = "Friendiness of staff";
+                              $criteria[1] = "Appropriate knowledge of staff on initial enquiry";
+                              $criteria[2] = "Efficient handling of testing request";
+                              $criteria[3] = "Professionalism";
+                              $criteria[4] = "Efficiency of turnaround time";
+                              $criteria[5] = "Reporting";
+                              $criteria[6] = "Appropriate explanation of test results";
+                              $criteria[7] = "After testing communication";
+                              
+                              $ratings[0] = "N/A";
+                              $ratings[1] = "Low";
+                              $ratings[2] = "Medium";
+                              $ratings[3] = "High";
+                              
+                              foreach ($criteria as $criterion)
                               {
-                                  // it was selected so select it again (so the user doesn't lose there selection)
-                                  echo '<input type="radio" id="criteria_1_na" name="criteria_1" value = "na" checked = "true" />';
-                              }
-                              else
-                              {
-                                  // it wasnt selected so leave it unchecked
-                                  echo '<input type="radio" id="criteria_1_na" name="criteria_1" value = "na" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_1_na">N/A</label>
-                            <?php
-                              if ($_POST["criteria_1"]=="low")
-                              {
-                                  echo '<input type="radio" id="criteria_1_low" name="criteria_1" value = "low" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_1_low" name="criteria_1" value = "low" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_1_low">Low</label>
-                            <?php
-                              if ($_POST["criteria_1"]=="medium")
-                              {
-                                  echo '<input type="radio" id="criteria_1_medium" name="criteria_1" value = "medium" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_1_medium" name="criteria_1" value = "medium" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_1_medium">Medium</label>
-                            <?php
-                              if ($_POST["criteria_1"]=="high")
-                              {
-                                  echo '<input type="radio" id="criteria_1_high" name="criteria_1" value = "high" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_1_high" name="criteria_1" value = "high" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_1_high">High</label>
-                        </p>
-                        <!--Appropriate knowledge of staff on initial enquiry( criteria_2) -->
-                        <p class = "feedback_criteria">
-                            Appropriate knowledge of staff on initial enquiry: <br />
-                            <?php
-                              // Check which if this radio button was selected before the submit button was pressed
-                              if ($_POST["criteria_2"]=="na")
-                              {
-                                  // it was selected so select it again (so the user doesn't lose there selection)
-                                  echo '<input type="radio" id="criteria_2_na" name="criteria_2" value = "na" checked = "true" />';
-                              }
-                              else
-                              {
-                                  // it wasnt selected so leave it unchecked
-                                  echo '<input type="radio" id="criteria_2_na" name="criteria_2" value = "na" />';
+                                echo $criterion.':<br />';
+                                
+                                $rating_nr = 0;
+
+                                foreach ($ratings as $rating)
+                                {
+                                  if (isset($_POST["criteria_".$criterion_nr]))
+                                  {
+                                    if ($_POST["criteria_".$criterion_nr]==$rating_nr)
+                                    {
+                                      // it was selected so select it again (so the user doesn't lose there selection)
+                                      echo '<input type="radio" id="criteria_'.$criterion_nr.'_'.$rating_nr.'" name="criteria_'.$criterion_nr.'" value = "'.$rating_nr.'" checked = "true" />';
+                                    }
+                                    else
+                                    {
+                                      // it wasnt selected so leave it unchecked
+                                      echo '<input type="radio" id="criteria_'.$criterion_nr.'_'.$rating_nr.'" name="criteria_'.$criterion_nr.'" value = "'.$rating_nr.'" />';
+                                    }
+                                  }
+                                  else
+                                  {
+                                    echo '<input type="radio" id="criteria_'.$criterion_nr.'_'.$rating_nr.'" name="criteria_'.$criterion_nr.'" value = "'.$rating_nr.'" />';
+                                  }
+                                  echo '<label class = "button" for="criteria_'.$criterion_nr.'_'.$rating_nr.'">'.$rating.'</label>';
+                                  $rating_nr += 1;
+                                }
+                                echo '<br /><br />';
+                                $criterion_nr += 1;
                               }
                             ?>
-                            <label class = "button" for="criteria_2_na">N/A</label>
-                            <?php
-                              if ($_POST["criteria_2"]=="low")
-                              {
-                                  echo '<input type="radio" id="criteria_2_low" name="criteria_2" value = "low" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_2_low" name="criteria_2" value = "low" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_2_low">Low</label>
-                            <?php
-                              if ($_POST["criteria_2"]=="medium")
-                              {
-                                  echo '<input type="radio" id="criteria_2_medium" name="criteria_2" value = "medium" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_2_medium" name="criteria_2" value = "medium" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_2_medium">Medium</label>
-                            <?php
-                              if ($_POST["criteria_2"]=="high")
-                              {
-                                  echo '<input type="radio" id="criteria_2_high" name="criteria_2" value = "high" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_2_high" name="criteria_2" value = "high" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_2_high">High</label>
-                        </p>
-                        <!--Efficient handling of testing request (criteria_3) -->
-                        <p class = "feedback_criteria">
-                            Efficient handling of testing request: <br />
-                            <?php
-                              // Check which if this radio button was selected before the submit button was pressed
-                              if ($_POST["criteria_3"]=="na")
-                              {
-                                  // it was selected so select it again (so the user doesn't lose there selection)
-                                  echo '<input type="radio" id="criteria_3_na" name="criteria_3" value = "na" checked = "true" />';
-                              }
-                              else
-                              {
-                                  // it wasnt selected so leave it unchecked
-                                  echo '<input type="radio" id="criteria_3_na" name="criteria_3" value = "na" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_3_na">N/A</label>
-                            <?php
-                              if ($_POST["criteria_3"]=="low")
-                              {
-                                  echo '<input type="radio" id="criteria_3_low" name="criteria_3" value = "low" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_3_low" name="criteria_3" value = "low" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_3_low">Low</label>
-                            <?php
-                              if ($_POST["criteria_3"]=="medium")
-                              {
-                                  echo '<input type="radio" id="criteria_3_medium" name="criteria_3" value = "medium" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_3_medium" name="criteria_3" value = "medium" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_3_medium">Medium</label>
-                            <?php
-                              if ($_POST["criteria_3"]=="high")
-                              {
-                                  echo '<input type="radio" id="criteria_3_high" name="criteria_3" value = "high" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_3_high" name="criteria_3" value = "high" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_3_high">High</label>
-                        </p>
-                        <!--Professionalism (criteria_4) -->
-                        <p class = "feedback_criteria">
-                            Professionalism: <br />
-                            <?php
-                              // Check which if this radio button was selected before the submit button was pressed
-                              if ($_POST["criteria_4"]=="na")
-                              {
-                                  // it was selected so select it again (so the user doesn't lose there selection)
-                                  echo '<input type="radio" id="criteria_4_na" name="criteria_4" value = "na" checked = "true" />';
-                              }
-                              else
-                              {
-                                  // it wasnt selected so leave it unchecked
-                                  echo '<input type="radio" id="criteria_4_na" name="criteria_4" value = "na" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_4_na">N/A</label>
-                            <?php
-                              if ($_POST["criteria_4"]=="low")
-                              {
-                                  echo '<input type="radio" id="criteria_4_low" name="criteria_4" value = "low" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_4_low" name="criteria_4" value = "low" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_4_low">Low</label>
-                            <?php
-                              if ($_POST["criteria_4"]=="medium")
-                              {
-                                  echo '<input type="radio" id="criteria_4_medium" name="criteria_4" value = "medium" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_4_medium" name="criteria_4" value = "medium" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_4_medium">Medium</label>
-                            <?php
-                              if ($_POST["criteria_4"]=="high")
-                              {
-                                  echo '<input type="radio" id="criteria_4_high" name="criteria_4" value = "high" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_4_high" name="criteria_4" value = "high" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_4_high">High</label>
-                        </p>
-                        <!--Efficiency of turnaround time (criteria_5) -->
-                        <p class = "feedback_criteria">
-                            Efficiency of turnaround time: <br />
-                            <?php
-                              // Check which if this radio button was selected before the submit button was pressed
-                              if ($_POST["criteria_5"]=="na")
-                              {
-                                  // it was selected so select it again (so the user doesn't lose there selection)
-                                  echo '<input type="radio" id="criteria_5_na" name="criteria_5" value = "na" checked = "true" />';
-                              }
-                              else
-                              {
-                                  // it wasnt selected so leave it unchecked
-                                  echo '<input type="radio" id="criteria_5_na" name="criteria_5" value = "na" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_5_na">N/A</label>
-                            <?php
-                              if ($_POST["criteria_5"]=="low")
-                              {
-                                  echo '<input type="radio" id="criteria_5_low" name="criteria_5" value = "low" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_5_low" name="criteria_5" value = "low" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_5_low">Low</label>
-                            <?php
-                              if ($_POST["criteria_5"]=="medium")
-                              {
-                                  echo '<input type="radio" id="criteria_5_medium" name="criteria_5" value = "medium" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_5_medium" name="criteria_5" value = "medium" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_5_medium">Medium</label>
-                            <?php
-                              if ($_POST["criteria_5"]=="high")
-                              {
-                                  echo '<input type="radio" id="criteria_5_high" name="criteria_5" value = "high" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_5_high" name="criteria_5" value = "high" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_5_high">High</label>
-                        </p>
-                        <!--Reporting (criteria_6) -->
-                        <p class = "feedback_criteria">
-                            Reporting: <br />
-                            <?php
-                              // Check which if this radio button was selected before the submit button was pressed
-                              if ($_POST["criteria_6"]=="na")
-                              {
-                                  // it was selected so select it again (so the user doesn't lose there selection)
-                                  echo '<input type="radio" id="criteria_6_na" name="criteria_6" value = "na" checked = "true" />';
-                              }
-                              else
-                              {
-                                  // it wasnt selected so leave it unchecked
-                                  echo '<input type="radio" id="criteria_6_na" name="criteria_6" value = "na" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_6_na">N/A</label>
-                            <?php
-                              if ($_POST["criteria_6"]=="low")
-                              {
-                                  echo '<input type="radio" id="criteria_6_low" name="criteria_6" value = "low" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_6_low" name="criteria_6" value = "low" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_6_low">Low</label>
-                            <?php
-                              if ($_POST["criteria_6"]=="medium")
-                              {
-                                  echo '<input type="radio" id="criteria_6_medium" name="criteria_6" value = "medium" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_6_medium" name="criteria_6" value = "medium" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_6_medium">Medium</label>
-                            <?php
-                              if ($_POST["criteria_6"]=="high")
-                              {
-                                  echo '<input type="radio" id="criteria_6_high" name="criteria_6" value = "high" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_6_high" name="criteria_6" value = "high" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_6_high">High</label>
-                        </p>
-                        <!--Appropriate explanation of test results (criteria_7) -->
-                        <p class = "feedback_criteria">
-                            Appropriate explanation of test results: <br />
-                            <?php
-                              // Check which if this radio button was selected before the submit button was pressed
-                              if ($_POST["criteria_7"]=="na")
-                              {
-                                  // it was selected so select it again (so the user doesn't lose there selection)
-                                  echo '<input type="radio" id="criteria_7_na" name="criteria_7" value = "na" checked = "true" />';
-                              }
-                              else
-                              {
-                                  // it wasnt selected so leave it unchecked
-                                  echo '<input type="radio" id="criteria_7_na" name="criteria_7" value = "na" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_7_na">N/A</label>
-                            <?php
-                              if ($_POST["criteria_7"]=="low")
-                              {
-                                  echo '<input type="radio" id="criteria_7_low" name="criteria_7" value = "low" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_7_low" name="criteria_7" value = "low" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_7_low">Low</label>
-                            <?php
-                              if ($_POST["criteria_7"]=="medium")
-                              {
-                                  echo '<input type="radio" id="criteria_7_medium" name="criteria_7" value = "medium" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_7_medium" name="criteria_7" value = "medium" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_7_medium">Medium</label>
-                            <?php
-                              if ($_POST["criteria_7"]=="high")
-                              {
-                                  echo '<input type="radio" id="criteria_7_high" name="criteria_7" value = "high" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_7_high" name="criteria_7" value = "high" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_7_high">High</label>
-                        </p>
-                        <!--After testing communication (criteria_8) -->
-                        <p class = "feedback_criteria">
-                            After testing communication: <br />
-                            <?php
-                              // Check which if this radio button was selected before the submit button was pressed
-                              if ($_POST["criteria_8"]=="na")
-                              {
-                                  // it was selected so select it again (so the user doesn't lose there selection)
-                                  echo '<input type="radio" id="criteria_8_na" name="criteria_8" value = "na" checked = "true" />';
-                              }
-                              else
-                              {
-                                  // it wasnt selected so leave it unchecked
-                                  echo '<input type="radio" id="criteria_8_na" name="criteria_8" value = "na" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_8_na">N/A</label>
-                            <?php
-                              if ($_POST["criteria_8"]=="low")
-                              {
-                                  echo '<input type="radio" id="criteria_8_low" name="criteria_8" value = "low" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_8_low" name="criteria_8" value = "low" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_8_low">Low</label>
-                            <?php
-                              if ($_POST["criteria_8"]=="medium")
-                              {
-                                  echo '<input type="radio" id="criteria_8_medium" name="criteria_8" value = "medium" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_8_medium" name="criteria_8" value = "medium" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_8_medium">Medium</label>
-                            <?php
-                              if ($_POST["criteria_8"]=="high")
-                              {
-                                  echo '<input type="radio" id="criteria_8_high" name="criteria_8" value = "high" checked = "true" />';
-                              }
-                              else
-                              {
-                                  echo '<input type="radio" id="criteria_8_high" name="criteria_8" value = "high" />';
-                              }
-                            ?>
-                            <label class = "button" for="criteria_8_high">High</label>
-                        </p>
-                        <!--Other comments -->
-                        <p class = "feedback_criteria">
-                            Other comments: <br />
-                            <?php
-                                echo '<textarea id="other_comments" name="other_comments" rows="10" cols="70" >'.$_POST["other_comments"].'</textarea>';
-                            ?>
-                        </p>
-                    </fieldset>
+                            <!--Other comments -->
+                            <p class = "feedback_criteria">
+                                Other comments: <br />
+                                <?php
+                                  if(isset($_POST["other_comments"]))
+                                  {
+                                    echo '<textarea id="other_comments" name="other_comments" rows="10" cols="70" >'.$_POST["other_comments"].'</textarea>';
+                                  }
+                                  else
+                                  {
+                                    echo '<textarea id="other_comments" name="other_comments" rows="10" cols="70" ></textarea>';
+                                  }
+                                ?>
+                            </p>
+                      </fieldset>
                     <input class = "submit" type = "submit" id = "submit_form" name = "submit_form" value= "Submit" />
                 </fieldset>
             </form>
