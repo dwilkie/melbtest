@@ -15,10 +15,11 @@
   Version 0.2; 2008-01-31 Fixed validation of email and company, updated div and class tags for styling,  modified feedback form to remember choices on invalid submissions, integrated emailing of results,
                                              added comments, added all feedback criteria and added other comments text area. - DCW
   Version 0.3; 2008-02-02 Initialised all variables and simplyfied code for displaying criteria into a loop. - DCW
-  Version 0.4; 2008-02-04 Modified criterion and rating numbers to make them more user readable, added comments to feedback form creation, added new-lines to php outputs for readability, 
+  Version 0.4; 2008-02-04 Modified criterion and rating numbers to make them more user readable, added comments to feedback form creation, added new-lines to php outputs for readability and started modifying email content. - DCW
 
   todo:
     Add validation to ensure all criteria are rated.
+    Finish email content
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -92,7 +93,10 @@
             {
               echo '<p class="success">Successfully submitted form.</p>';
 
-              $to  = 'dwilkie@gmail.com';
+              // Change email destination options here
+              $feedback_destination = 'dwilkie@gmail.com';
+              $recipient_first_name = 'Leanne';
+              $recipient_surname = 'Wilkie';
 
               // subject
               $subject = 'Feedback from MTS website';
@@ -105,7 +109,9 @@
                 </head>
                 <body>
                   <p>
-                    This is a test email
+                    Hi '.$recipient_first_name.',<br />
+                    I have left feedback on your site. The details are as follows: <br />
+                    My Name: '.$_POST['contact_name'].'<br />
                   </p>
                 </body>
               </html>
@@ -114,6 +120,8 @@
               // To send HTML mail, the Content-type header must be set
               $headers  = 'MIME-Version: 1.0'."\r\n";
               $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
+              $headers .= 'To: '.$recipient_first_name.' '.$recipient_surname.' <'.$feedback_destination.'>'."\r\n";
+              $headers .= 'From: '.$_POST['contact_name'].' <'.$_POST['email'].'>'."\r\n";
 
               mail($to,$subject,$message,$headers);
             }
