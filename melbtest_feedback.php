@@ -123,7 +123,7 @@
               $headers .= 'To: '.$recipient_first_name.' '.$recipient_surname.' <'.$feedback_destination.'>'."\r\n";
               $headers .= 'From: '.$_POST['contact_name'].' <'.$_POST['email'].'>'."\r\n";
 
-              mail($to,$subject,$message,$headers);
+              mail($feedback_destination,$subject,$message,$headers);
             }
           }
         }
