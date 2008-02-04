@@ -185,7 +185,7 @@
                 foreach ($criteria as $criterion)
                 {
                   // output a comment e.g. <!-- Criterion 1 (Friendliness of staff) -->
-                  echo '<!--Criterion '.$criterion_nr.' ('.$criterion'.')-->"\r\n"';
+                  echo '<!--Criterion '.$criterion_nr.' ('.$criterion.')-->"\r\n"';
                   
                   // output the actual criteria followed by a colon (:)
                   echo $criterion.': <br />"\r\n"';
@@ -195,7 +195,7 @@
                   foreach ($ratings as $rating)
                   {
                     // output a comment e.g. <!-- Rating 1 (N/A) -->
-                    echo '<!--Rating '.$rating_nr.' ('.$rating'.')-->"\r\n"';
+                    echo '<!--Rating '.$rating_nr.' ('.$rating.')-->"\r\n"';
                     
                     // Check if the current criteria has been already rated by the user
                     if (isset($_POST["criteria_".$criterion_nr]))
