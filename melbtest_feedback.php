@@ -32,6 +32,10 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
+    <?php
+      //add navbar
+      include("navex.ssi"); 
+    ?>
     <div class ="content">
       <h1>Melbourne Testing Services Feedback Form</h1>
       <!--start dynamic content-->

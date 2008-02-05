@@ -100,3 +100,43 @@ div.footer
     font-size: 0.8em;
 }
 
+div.navex
+{
+    margin-top = -120px;
+}
+
+div.navex ul
+{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+}
+
+div.navex ul li
+{
+    background: #e1e1e1;
+    margin: 5px 0px;
+    padding: 0px;
+    border-right: 10px solid #008cc6;
+    border-left: 1px solid gray;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    text-align: center;
+    color: #663300;
+}
+
+div.navex ul li a
+{
+  text-decoration: none;
+}
+
+div.navex ul li a:link
+{
+  color: #663300;
+}
+
+div.navex ul li a:visited
+{
+  color: #663300;
+}
