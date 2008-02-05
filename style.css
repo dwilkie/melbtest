@@ -3,11 +3,16 @@
   Author: David Wilkie (dwilkie@gmail.com)
   */
 
-
 body
 {
   background-color: #f3f0f0;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+div.content
+{
+    margin-left: 6em;
 }
 
 h1
@@ -24,29 +29,35 @@ h2
   font-weight: bold;
   color: #663300;
 }
+
+/* successful submission */
 p.success
 {
     font-weight: bold;
     border: 2px solid green;
 }
 
+/* errors in submission */
 div.errors
 {
     font-weight:bold;
     border: 2px solid red;
 }
 
+/* successful submission */
 form.feedback p
 {
   margin-top: 1em;
 }
 
+/* feedback criteria text e.g. 1. friendliness of staff */
 form.feedback p.feedback_criteria
 {
     font-style: italic;
     font-weight: bold;
 }
 
+/* label text for customer details form elements e.g. contact name */
 form.feedback label.text
 {
     width: 7.5em;
@@ -58,26 +69,20 @@ form.feedback label.text
     font-style: italic;
 }
 
-form.feedback input.button
-{
-    color: #f30000;
-    font-weight: bold;
-    background: #d1d2d4;
-    text-align: center;
-    width: auto;
-}
-
+/* feedback rating labels for radio buttons e.g. n/a */
 form.feedback label.button
 {
     font-style: normal;
     font-weight: normal;
 }
 
+/* ensures a gap between form inputs */
 form.feedback input
 {
     margin-bottom: .5em;
 }
 
+/* style for main fieldset */
 form.feedback fieldset.main
 {
     margin-top: 2em;
@@ -85,6 +90,7 @@ form.feedback fieldset.main
     padding: 1em;
 }
 
+/* style for legend on form */
 form.feedback fieldset.main legend
 {
     font-weight: bold;
@@ -94,22 +100,20 @@ form.feedback fieldset.main legend
     padding: .5em .5em;
 }
 
+/* footer */
 div.footer
 {
     text-align: center;
     font-size: 0.8em;
 }
 
-div.navex
-{
-    margin-top = -120px;
-}
-
+/* navigation bar */
 div.navex ul
 {
     list-style-type: none;
-    padding: 0px;
-    margin: 0px;
+    padding: 0em;
+    margin: 0em;
+    margin-top: 8em;
     position: absolute;
 }
 
