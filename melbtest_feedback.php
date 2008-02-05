@@ -349,8 +349,10 @@
               }
             echo '</p>'."\r\n";
             //submit button
-            echo '<input class = "submit_button" type = "submit" id = "submit_form" name = "submit_form" value= "Submit" />'."\r\n";
-            echo '<input class = "submit_button" type = "reset" id = "reset_form" name = "reset_form" value= "Reset" />'."\r\n";
+            echo '<p class = "feedback_criteria">'."\r\n";
+              echo '<input class = "submit_button" type = "submit" id = "submit_form" name = "submit_form" value= "Submit" />'."\r\n";
+              echo '<input class = "submit_button" type = "reset" id = "reset_form" name = "reset_form" value= "Reset" />'."\r\n";
+            echo '</p>'."\r\n";
         echo '</fieldset>'."\r\n";
       echo '</form>'."\r\n";
     ?>
