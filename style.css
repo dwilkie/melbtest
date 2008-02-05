@@ -80,7 +80,7 @@ form.feedback label.button
 /* submit and reset buttons */
 form.feedback input.submit_button
 {
-  padding: 1em;
+  margin-left: 0em;
 }
 
 /* ensures a gap between form inputs */
