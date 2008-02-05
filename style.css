@@ -1,6 +1,7 @@
 /*
   CSS for Melbtest feedback form
   Author: David Wilkie (dwilkie@gmail.com)
+  todo: 
   */
 
 body
@@ -100,13 +101,6 @@ form.feedback fieldset.main legend
     padding: .5em .5em;
 }
 
-/* footer */
-div.footer
-{
-    text-align: center;
-    font-size: 0.8em;
-}
-
 /* navigation bar */
 div.navex ul
 {
@@ -143,4 +137,12 @@ div.navex ul li a:link
 div.navex ul li a:visited
 {
   color: #663300;
+}
+
+/* footer */
+div.footer
+{
+    margin-left: 6em;
+    text-align: center;
+    font-size: 0.8em;
 }

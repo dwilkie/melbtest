@@ -17,14 +17,12 @@
   Version 0.3; 2008-02-02 Initialised all variables and simplyfied code for displaying criteria into a loop. - DCW
   Version 0.4; 2008-02-04 Modified criterion and rating numbers to make them more user readable, added comments to feedback form creation,
                                               added new-lines to php outputs for readability and started modifying email content. - DCW
-  Version 0.5; 2008-02-05 Added validation to ensure all feedback criteria is rated, finished email content, moved dynamic data into one php block, added validation for additional comments section,
-                                              added validation for blank contact name and email and added more comments to code. - DCW
+  Version 0.5; 2008-02-05 Added validation to ensure all feedback criteria is rated, finished email content, moved all dynamic data into single php block, added validation for additional comments section,
+                                              added validation for blank contact name and email, modified code to clear form fields on successful submission, added reset button, added include for navbar and added more comments to code. - DCW
   todo:
   add links to fix errors
-  add navigation bar
-  clear form on success
-  add form reset button
--->
+  put footer in ssi document
+  -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -252,7 +250,7 @@
             
               //contact name
               echo '<label class = "text" for = "contact_name">*Contact Name:</label>'."\r\n";
-              if (isset($_POST["contact_name"]))
+              if (isset($_POST["contact_name"]) && $error)
               {
                 echo '<input type = "text" id="contact_name" name="contact_name" value = "'.$_POST["contact_name"].'" />'."\r\n";
               }
@@ -264,7 +262,7 @@
               
               //company
               echo '<label class = "text" for = "company">Company:</label>'."\r\n";
-              if (isset($_POST["company"]))
+              if (isset($_POST["company"]) && $error)
               {
                 echo '<input type = "text" id="company" name="company" value = "'.$_POST["company"].'" />'."\r\n";
               }
@@ -276,7 +274,7 @@
               
               //email
               echo '<label class = "text" for = "email">*Email:</label>'."\r\n";
-              if (isset($_POST["email"]))
+              if (isset($_POST["email"]) && $error)
               {
                 echo '<input type = "text" id="email" name="email" value = "'.$_POST["email"].'" />'."\r\n";
               }
@@ -308,7 +306,7 @@
                 echo '<!--Rating '.$rating_nr.' ('.$rating.')-->'."\r\n";
                 
                 // check if the current criteria has been already rated by the user
-                if (isset($_POST["criteria_".$criterion_nr]))
+                if (isset($_POST["criteria_".$criterion_nr]) && $error)
                 {
                   // this criteria has been already rated so check if the user selected the current rating
                   if ($_POST["criteria_".$criterion_nr]==$rating_nr)
@@ -341,7 +339,7 @@
             echo '<!--other comments -->'."\r\n";
             echo '<p class = "feedback_criteria">'."\r\n";
               echo 'Other comments: <br />'."\r\n";
-              if(isset($_POST["other_comments"]))
+              if(isset($_POST["other_comments"]) && $error)
               {
                 echo '<textarea id="other_comments" name="other_comments" rows="10" cols="70" >'.$_POST["other_comments"].'</textarea>'."\r\n";
               }
@@ -351,7 +349,7 @@
               }
             echo '</p>'."\r\n";
             //submit button
-            echo '<input class = "submit" type = "submit" id = "submit_form" name = "submit_form" value= "Submit" />'."\r\n";
+            echo '<input type = "submit" id = "submit_form" name = "submit_form" value= "Submit" /><input type = "reset" id = "reset_form" name = "reset_form" value= "Reset" />'."\r\n";
         echo '</fieldset>'."\r\n";
       echo '</form>'."\r\n";
     ?>
