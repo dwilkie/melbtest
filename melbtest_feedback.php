@@ -18,9 +18,9 @@
   Version 0.4; 2008-02-04 Modified criterion and rating numbers to make them more user readable, added comments to feedback form creation,
                                               added new-lines to php outputs for readability and started modifying email content. - DCW
   Version 0.5; 2008-02-05 Added validation to ensure all feedback criteria is rated, finished email content, moved all dynamic data into single php block, added validation for additional comments section,
-                                              added validation for blank contact name and email, modified code to clear form fields on successful submission, added reset button, added include for navbar and added more comments to code. - DCW
+                                              added validation for blank contact name and email, modified code to clear form fields on successful submission, added reset button, added include for navbar,
+                                              modified error messages to contain internal links to fields and added more comments to code. - DCW
   todo:
-  add links to fix errors
   put footer in ssi document
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -104,13 +104,13 @@
               if (!validate_name($_POST['contact_name']))
               {
                 $error = true;
-                $error_text = $error_text."\r\n".'<li>Contact name not valid - '.valid_name_text().'</li>';
+                $error_text = $error_text."\r\n".'<li>Contact name not valid - '.valid_name_text().'. <a href="#contact_name">Fix</a></li>';
               }
             }
             else
             {
               $error = true;
-              $error_text = $error_text."\r\n".'<li>Contact name is blank</li>';
+              $error_text = $error_text."\r\n".'<li>Contact name is blank. <a href="#contact_name">Complete</a></li>';
             }
             
             //validate the company
@@ -119,7 +119,7 @@
               if (!validate_name($_POST['company']))
               {
                 $error = true;
-                $error_text = $error_text."\r\n".'<li>Company not valid - '.valid_name_text().'</li>';
+                $error_text = $error_text."\r\n".'<li>Company not valid - '.valid_name_text().'. <a href="#company">Fix</a></li>';
               }
             }
             
@@ -129,13 +129,13 @@
               if (!validate_email($_POST['email']))
               {
                 $error = true;
-                $error_text = $error_text."\r\n".'<li>Email address is not valid</li>';
+                $error_text = $error_text."\r\n".'<li>Email address is not valid. <a href="#email">Fix</a></li>';
               }
             }
             else
             {
                 $error = true;
-                $error_text = $error_text."\r\n".'<li>Email address is blank</li>';
+                $error_text = $error_text."\r\n".'<li>Email address is blank. <a href="#email">Complete</a></li>';
             }
             
             //validate the comments
@@ -144,7 +144,7 @@
               if (!validate_string($_POST['other_comments']))
               {
                 $error = true;
-                $error_text = $error_text."\r\n".'<li>Comments contain invalid characters - '.valid_string_text().'</li>';
+                $error_text = $error_text."\r\n".'<li>Comments contain invalid characters - '.valid_string_text().'. <a href="#other_comments">Fix</a></li>';
               }
             }
 
@@ -155,7 +155,7 @@
               if (!isset($_POST["criteria_".$criterion_nr]))
               {
                 $error = true;
-                $error_text = $error_text."\r\n".'<li>Feedback item #'.$criterion_nr.' ('.$criterion.') not completed</li>';
+                $error_text = $error_text."\r\n".'<li>Feedback item #'.$criterion_nr.' ('.$criterion.') not completed. <a href="#criterion_'.$criterion_nr.'">Complete</a></li>';
               }
               $criterion_nr += 1;
             }
