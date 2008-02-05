@@ -1,0 +1,10 @@
+		<div id="navex">
+			<ul>
+				<li><a href="index.asp">Home</a></li>
+				<li><a href="about_us.asp">About</a></li>
+				<li><a href="services.asp">Services</a></li>
+				<li><a href="testimonials.asp">Testimonials</a></li>
+				<li><a href="enquiry.asp">Enquiry</a></li>
+				<li><a href="contact_us.asp">Contact Us</a></li>
+			</ul>
+		</div>
