@@ -13,7 +13,7 @@ body
 
 div.content
 {
-    margin-left: 6em;
+  margin-left: 6em;
 }
 
 h1
@@ -34,15 +34,15 @@ h2
 /* successful submission */
 p.success
 {
-    font-weight: bold;
-    border: 2px solid green;
+  font-weight: bold;
+  border: 2px solid green;
 }
 
 /* errors in submission */
 div.errors
 {
-    font-weight:bold;
-    border: 2px solid red;
+  font-weight:bold;
+  border: 2px solid red;
 }
 
 /* successful submission */
@@ -54,74 +54,79 @@ form.feedback p
 /* feedback criteria text e.g. 1. friendliness of staff */
 form.feedback p.feedback_criteria
 {
-    font-style: italic;
-    font-weight: bold;
+  font-style: italic;
+  font-weight: bold;
 }
 
 /* label text for customer details form elements e.g. contact name */
 form.feedback label.text
 {
-    width: 7.5em;
-    float: left;
-    text-align: right;
-    margin-right: 0.5em;
-    display: block;
-    font-weight: bold;
-    font-style: italic;
+  width: 7.5em;
+  float: left;
+  text-align: right;
+  margin-right: 0.5em;
+  display: block;
+  font-weight: bold;
+  font-style: italic;
 }
 
 /* feedback rating labels for radio buttons e.g. n/a */
 form.feedback label.button
 {
-    font-style: normal;
-    font-weight: normal;
+  font-style: normal;
+  font-weight: normal;
 }
 
 /* ensures a gap between form inputs */
 form.feedback input
 {
-    margin-bottom: .5em;
+  margin-bottom: .5em;
+}
+
+form.feedback input.button
+{
+  float: left;
 }
 
 /* style for main fieldset */
 form.feedback fieldset.main
 {
-    margin-top: 2em;
-    border: 5px solid #663300;
-    padding: 1em;
+  margin-top: 2em;
+  border: 5px solid #663300;
+  padding: 1em;
 }
 
 /* style for legend on form */
 form.feedback fieldset.main legend
 {
-    font-weight: bold;
-    color: #000;
-    background: #008cc6;
-    border: 1px solid #663300;
-    padding: .5em .5em;
+  font-weight: bold;
+  color: #000;
+  background: #008cc6;
+  border: 1px solid #663300;
+  padding: .5em .5em;
 }
 
 /* navigation bar */
 div.navex ul
 {
-    list-style-type: none;
-    padding: 0em;
-    margin: 0em;
-    margin-top: 8em;
-    position: absolute;
+  list-style-type: none;
+  padding: 0em;
+  margin: 0em;
+  margin-top: 8em;
+  position: absolute;
 }
 
 div.navex ul li
 {
-    background: #e1e1e1;
-    margin: 5px 0px;
-    padding: 0px;
-    border-right: 10px solid #008cc6;
-    border-left: 1px solid gray;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-    text-align: center;
-    color: #663300;
+  background: #e1e1e1;
+  margin: 5px 0px;
+  padding: 0px;
+  border-right: 10px solid #008cc6;
+  border-left: 1px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  text-align: center;
+  color: #663300;
 }
 
 div.navex ul li a
@@ -142,7 +147,7 @@ div.navex ul li a:visited
 /* footer */
 div.footer
 {
-    margin-left: 6em;
-    text-align: center;
-    font-size: 0.8em;
+  margin-left: 6em;
+  text-align: center;
+  font-size: 0.8em;
 }

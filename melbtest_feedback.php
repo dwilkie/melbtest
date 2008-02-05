@@ -155,7 +155,7 @@
               if (!isset($_POST["criteria_".$criterion_nr]))
               {
                 $error = true;
-                $error_text = $error_text."\r\n".'<li>Feedback item #'.$criterion_nr.' ('.$criterion.') not completed. <a href="#criterion_'.$criterion_nr.'">Complete</a></li>';
+                $error_text = $error_text."\r\n".'<li>Feedback item #'.$criterion_nr.' ('.$criterion.') not completed. <a href="#criterion_'.$criterion_nr.'_1">Complete</a></li>';
               }
               $criterion_nr += 1;
             }
@@ -349,7 +349,7 @@
               }
             echo '</p>'."\r\n";
             //submit button
-            echo '<input type = "submit" id = "submit_form" name = "submit_form" value= "Submit" /><input type = "reset" id = "reset_form" name = "reset_form" value= "Reset" />'."\r\n";
+            echo '<input class = "button" type = "submit" id = "submit_form" name = "submit_form" value= "Submit" /><input class = "button" type = "reset" id = "reset_form" name = "reset_form" value= "Reset" />'."\r\n";
         echo '</fieldset>'."\r\n";
       echo '</form>'."\r\n";
     ?>
