@@ -17,9 +17,13 @@
   Version 0.3; 2008-02-02 Initialised all variables and simplyfied code for displaying criteria into a loop. - DCW
   Version 0.4; 2008-02-04 Modified criterion and rating numbers to make them more user readable, added comments to feedback form creation,
                                               added new-lines to php outputs for readability and started modifying email content. - DCW
-  Version 0.5; 2008-02-05 Added validation to ensure all feedback criteria is rated, finished email content, moved dynamic data into one php block, added validation for additional comments section
-                                              and added more comments to code. - DCW
+  Version 0.5; 2008-02-05 Added validation to ensure all feedback criteria is rated, finished email content, moved dynamic data into one php block, added validation for additional comments section,
+                                              added validation for blank contact name and email and added more comments to code. - DCW
   todo:
+  add links to fix errors
+  add navigation bar
+  clear form on success
+  add form reset button
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -93,10 +97,18 @@
             $error_text = "";
 
             //validate contact name
-            if (!validate_name($_POST['contact_name']))
+            if (!empty($_POST['contact_name']))
+            {            
+              if (!validate_name($_POST['contact_name']))
+              {
+                $error = true;
+                $error_text = $error_text."\r\n".'<li>Contact name not valid - '.valid_name_text().'</li>';
+              }
+            }
+            else
             {
               $error = true;
-              $error_text = $error_text."\r\n".'<li>Contact name not valid - '.valid_name_text().'</li>';
+              $error_text = $error_text."\r\n".'<li>Contact name is blank</li>';
             }
             
             //validate the company
@@ -110,10 +122,18 @@
             }
             
             //validate the email address
-            if (!validate_email($_POST['email']))
+            if (!empty($_POST['email']))
             {
-              $error = true;
-              $error_text = $error_text."\r\n".'<li>Email not valid</li>';
+              if (!validate_email($_POST['email']))
+              {
+                $error = true;
+                $error_text = $error_text."\r\n".'<li>Email address is not valid</li>';
+              }
+            }
+            else
+            {
+                $error = true;
+                $error_text = $error_text."\r\n".'<li>Email address is blank</li>';
             }
             
             //validate the comments
@@ -165,21 +185,21 @@
                 <body>
                   <p>
                     Hi '.$recipient_first_name.',<br /><br />
-                    I have left feedback on your site. The details are as follows: <br />';
+                    I have left feedback on your site. The details are as follows: <br /><br />';
 
                     // contact name
-                    $message .= '<strong>My name:</strong>&nbsp;'.$_POST['contact_name'].'<br />';
+                    $message .= 'My name:&nbsp;'.$_POST['contact_name'].'<br />';
                     
                     if (!empty($_POST['company']))
                     {
                       //company (if entered)
-                      $message .= '<strong>Company:</strong>&nbsp;'.$_POST['company'].'<br />';
+                      $message .= 'Company:&nbsp;'.$_POST['company'].'<br />';
                     }
                     //email
-                    $message .= '<strong>My email:</strong>&nbsp;<a href="mailto:'.$_POST['email'].'?subject=RE: '.$subject.'">'.$_POST['email'].'</a><br /><br />';
+                    $message .= 'My email:&nbsp;<a href="mailto:'.$_POST['email'].'?subject=RE: '.$subject.'">'.$_POST['email'].'</a><br /><br />';
                     
                     //feedback
-                    $message .= '<strong>My feedback:</strong><br /><br />';
+                    $message .= '<strong>My feedback:</strong><br />';
                     
                     $criterion_nr = 1;
                     foreach ($criteria as $criterion)
