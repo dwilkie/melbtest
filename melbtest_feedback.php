@@ -17,8 +17,8 @@
   Version 0.3; 2008-02-02 Initialised all variables and simplyfied code for displaying criteria into a loop. - DCW
   Version 0.4; 2008-02-04 Modified criterion and rating numbers to make them more user readable, added comments to feedback form creation,
                                               added new-lines to php outputs for readability and started modifying email content. - DCW
-  Version 0.5; 2008-02-05 Added validation to ensure all feedback criteria is rated, finished email content and moved dynamic data into one php block. - DCW
-
+  Version 0.5; 2008-02-05 Added validation to ensure all feedback criteria is rated, finished email content, moved dynamic data into one php block, added validation for additional comments section
+                                              and added more comments to code. - DCW
   todo:
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -48,6 +48,7 @@
         $ratings[2] = "Medium";
         $ratings[3] = "High";
         
+        //function for validating names (only accepts characters from A-Z)
         function validate_name($rString)
         {
           $mod_string = str_replace(' ', '', $rString);
@@ -55,6 +56,7 @@
           return ereg($pattern, $mod_string);
         }
         
+        //function for validating strings (does not allow angled brackets
         function validate_string($rString)
         {
           $mod_string = str_replace(' ', '', $rString);
@@ -62,34 +64,42 @@
           return ereg($pattern, $mod_string);
         }        
 
+        //function for validating email addresses
         function validate_email($rString)
         {
           $pattern = "^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
           return ereg($pattern, $rString);
         }
 
+        //returns the text to display for an invalid name
         function valid_name_text()
         {
           return 'Can only contain letters from A-Z';
         }
         
+        //returns the text to display for an invalid string
         function valid_string_text()
         {
           return 'Must not contain angle brackets (&lt; &gt;)';
         }        
         
+        //check if submit button has been pressed by user
         if (isset($_POST['submit_form']))
         {
           if ($_POST['submit_form'])
           {
+            //the user has submitted the form so validate all fields
             $error = false;
             $error_text = "";
 
+            //validate contact name
             if (!validate_name($_POST['contact_name']))
             {
               $error = true;
-              $error_text = $error_text."\r\n".'<li>Contact Name not valid - '.valid_name_text().'</li>';
+              $error_text = $error_text."\r\n".'<li>Contact name not valid - '.valid_name_text().'</li>';
             }
+            
+            //validate the company
             if (!empty($_POST['company']))
             {
               if (!validate_name($_POST['company']))
@@ -98,18 +108,25 @@
                 $error_text = $error_text."\r\n".'<li>Company not valid - '.valid_name_text().'</li>';
               }
             }
+            
+            //validate the email address
             if (!validate_email($_POST['email']))
             {
               $error = true;
               $error_text = $error_text."\r\n".'<li>Email not valid</li>';
             }
             
-            if (!validate_string($_POST['other_comments']))
+            //validate the comments
+            if (!empty($_POST['other_comments']))
             {
-              $error = true;
-              $error_text = $error_text."\r\n".'<li>Comments contain invalid characters - '.valid_string_text().'</li>';
+              if (!validate_string($_POST['other_comments']))
+              {
+                $error = true;
+                $error_text = $error_text."\r\n".'<li>Comments contain invalid characters - '.valid_string_text().'</li>';
+              }
             }
-            
+
+            //ensure that all feedback criteria is filled out
             $criterion_nr = 1;
             foreach ($criteria as $criterion)
             {
@@ -118,14 +135,17 @@
                 $error = true;
                 $error_text = $error_text."\r\n".'<li>Feedback item #'.$criterion_nr.' ('.$criterion.') not completed</li>';
               }
+              $criterion_nr += 1;
             }
             
             if($error)
             {
+              //there were problem(s) with the input so display the errors to the user
               echo '<div class="errors">'."\r\n".'<p>'."\r\n".'Could not submit form. Please fix the following errors:'."\r\n".'</p>'."\r\n".'<ol>'."\r\n".substr($error_text, 2).'</ol>'."\r\n".'</div>';
             }
             else
             {
+              //no problems with the input so send the email
               echo '<p class="success">Successfully submitted form.</p>';
 
               // change email destination options here
@@ -164,10 +184,9 @@
                     $criterion_nr = 1;
                     foreach ($criteria as $criterion)
                     {
-                      {
-                        $rating_index = $_POST["criteria_".$criterion_nr]-1;
-                        $message .= '<em>'.$criterion_nr.'.&nbsp;'.$criterion.':</em>&nbsp;<strong>'.$ratings[$rating_index].'</strong><br />';
-                      }
+                      $rating_index = $_POST["criteria_".$criterion_nr]-1;
+                      $message .= '<em>'.$criterion_nr.'.&nbsp;'.$criterion.':</em>&nbsp;<strong>'.$ratings[$rating_index].'</strong><br />';
+                      $criterion_nr += 1;
                     }
                     
                     //other comments
