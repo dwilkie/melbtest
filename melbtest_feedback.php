@@ -155,7 +155,7 @@
               if (!isset($_POST["criteria_".$criterion_nr]))
               {
                 $error = true;
-                $error_text = $error_text."\r\n".'<li>Feedback item #'.$criterion_nr.' ('.$criterion.') not completed. <a href="#criterion_'.$criteria_nr.'">Complete</a></li>';
+                $error_text = $error_text."\r\n".'<li>Feedback item #'.$criterion_nr.' ('.$criterion.') not completed. <a href="#criteria_'.$criterion_nr.'">Complete</a></li>';
               }
               $criterion_nr += 1;
             }
