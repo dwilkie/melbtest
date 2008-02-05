@@ -170,7 +170,7 @@
               echo '<p class="success">Successfully submitted form.</p>';
 
               // change email destination options here
-              $feedback_destination = 'dwilkie@gmail.com';
+              $feedback_destination = 'leannewilkie@melbtest.com.au';
               $recipient_first_name = 'Leanne';
               $recipient_surname = 'Wilkie';
 
