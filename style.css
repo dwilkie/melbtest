@@ -77,12 +77,6 @@ form.feedback label.button
   font-weight: normal;
 }
 
-/* submit and reset buttons */
-form.feedback input.submit_button
-{
-  margin-left: 0em;
-}
-
 /* ensures a gap between form inputs */
 form.feedback input
 {

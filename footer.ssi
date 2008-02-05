@@ -1,0 +1,15 @@
+    <div class="footer">
+      <p>
+        Webmaster: <a href="mailto:dwilkie@gmail.com?subject=MTS Website">David Wilkie</a>.
+        Last modified on:
+        <script type="text/javascript">
+          <!--
+            var days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+            var months=["January","February","March","April","May","June","July","August","September","October","November"];
+            var last_mod = new Date(document.lastModified);
+            document.write(days[last_mod.getDay()] + ", " + last_mod.getDate() + " " + months[last_mod.getMonth()] + " " + last_mod.getFullYear() + ".");
+          -->
+        </script>
+        This page <a href="http://validator.w3.org/check?uri=referer">validates</a> to XMTML Strict. The CSS is also <a href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.melbtest.com.au/style.css">valid</a>.
+      </p>
+    </div>

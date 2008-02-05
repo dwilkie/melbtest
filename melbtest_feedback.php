@@ -19,9 +19,8 @@
                                               added new-lines to php outputs for readability and started modifying email content. - DCW
   Version 0.5; 2008-02-05 Added validation to ensure all feedback criteria is rated, finished email content, moved all dynamic data into single php block, added validation for additional comments section,
                                               added validation for blank contact name and email, modified code to clear form fields on successful submission, added reset button, added include for navbar,
-                                              modified error messages to contain internal links to fields and added more comments to code. - DCW
+                                              modified error messages to contain internal links to fields, added footer to external ssi and included it in this document and added more comments to code. - DCW
   todo:
-  put footer in ssi document
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -350,8 +349,8 @@
             echo '</p>'."\r\n";
             //submit button
             echo '<p class = "feedback_criteria">'."\r\n";
-              echo '<input class = "submit_button" type = "submit" id = "submit_form" name = "submit_form" value= "Submit" />'."\r\n";
-              echo '<input class = "submit_button" type = "reset" id = "reset_form" name = "reset_form" value= "Reset" />'."\r\n";
+              echo '<input type = "submit" id = "submit_form" name = "submit_form" value= "Submit" />'."\r\n";
+              echo '<input type = "reset" id = "reset_form" name = "reset_form" value= "Reset" />'."\r\n";
             echo '</p>'."\r\n";
         echo '</fieldset>'."\r\n";
       echo '</form>'."\r\n";
@@ -359,20 +358,9 @@
     <!-- end dynamic content-->
     </div>
     <!--footer section-->
-    <div class="footer">
-      <p>
-        Webmaster: <a href="mailto:dwilkie@gmail.com?subject=MTS Website">David Wilkie</a>.
-        Last modified on:
-        <script type="text/javascript">
-          <!--
-            var days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
-            var months=["January","February","March","April","May","June","July","August","September","October","November"];
-            var last_mod = new Date(document.lastModified);
-            document.write(days[last_mod.getDay()] + ", " + last_mod.getDate() + " " + months[last_mod.getMonth()] + " " + last_mod.getFullYear() + ".");
-          -->
-        </script>
-        This page <a href="http://validator.w3.org/check?uri=referer">validates</a> to XMTML Strict.
-      </p>
-    </div>
+    <?php
+      //add footer
+      include("footer.ssi"); 
+    ?>
   </body>
 </html>
