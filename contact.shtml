@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+  FILE: contact.shtml
+
+  A webpage displaying general contact information
+
+  Notes:
+  This page validates to XHTML strict.
+
+  Author:
+  David Wilkie (dwilkie@gmail.com)
+
+  Modified:
+  Version 0.1; 2008-02-06 Page created. - DCW
+  todo:
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Melbourne Testing Services::Contact</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <!--add navbar-->
+    <!--#include virtual="navex.ssi" -->
+    <div class ="content">
+      <h1>Contact</h1>
+      <h2>Contact Details</h2>
+      <p>
+        <strong>Telephone:</strong><br />
+        +61 (3) 9560 2759
+      </p>
+      <p>
+        <strong>Mobile:</strong><br />
+        +61 (0) 419 116 733
+      </p>
+      <p>
+        <strong>Fax:</strong><br />
+        +61 (3) 9560 2769
+      </p>
+      <p>
+        <strong>Visiting Address:</strong><br />
+        Unit 1/15 Pickering Rd<br />
+        Mulgrave<br />
+        Victoria 3170
+      </p>
+      <p>
+        <strong>Postal Address:</strong><br />
+        PO Box 2232<br />
+        Ringwood North<br />
+        Victoria 3134
+      </p>
+      <p>
+        <strong>Email:</strong><br />
+        <a href="mailto:rodwilkie@melbtest.com.au">rodwilkie@melbtest.com.au</a>
+      </p>
+    </div>
+    <!--add footer-->
+    <!--#include virtual="footer.ssi" -->
+  </body>
+</html>
