@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+  FILE: bearings.shtml
+
+  A product page describing bearings
+
+  Notes:
+  This page validates to XHTML strict.
+
+  Author:
+  David Wilkie (dwilkie@gmail.com)
+
+  Modified:
+  Version 0.1; 2008-02-07 Page created. - DCW
+  todo:
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Melbourne Testing Services::Bearings</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <!--add navbar-->
+    <!--#include virtual="navex.ssi" -->
+    <div class ="content">
+      <h1>Bearings</h1>
+      <p>
+        Proof load testing of structural bearings in both compression and shear and for the determination of
+        coefficient of friction. Tests may be conducted with combined vertical and horizontal load including rotation
+        and in accordance with AS 5100.4, AS 1523-1981 Appendix A, AusRoads Bridge Design Code 1992, RTA B280 and similar methods.
+      </p>
+      <ul>
+        <li class="thumbnail"><a href="images/services/bearings/bearing_001.gif" title="See the image full size"><img src="images/services/bearings/thumbs/bearing_001.gif" alt="Bearing Test 1"/></a></li>
+        <li><a href="images/services/bearings/bearing_002.gif" title="See the image full size"><img src="images/services/bearings/thumbs/bearing_002.gif" alt="Bearing Test 2"/></a></li>
+      </ul>
+    </div>
+    <!--add footer-->
+    <!--#include virtual="footer.ssi" -->
+  </body>
+</html>
