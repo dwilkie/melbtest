@@ -147,7 +147,15 @@ div.footer
   font-size: 0.8em;
 }
 
-ul li.thumbnails
+ul li.thumbnail
 {
   list-style: none;
+  float: left;
+  padding: 2em;
+  
+}
+
+ul li.thumbnail img
+{
+  border: none;
 }

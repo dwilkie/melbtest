@@ -32,7 +32,7 @@
       </p>
       <ul>
         <li class="thumbnail"><a href="images/services/bearings/bearing_001.gif" title="See the image full size"><img src="images/services/bearings/thumbs/bearing_001.gif" alt="Bearing Test 1"/></a></li>
-        <li><a href="images/services/bearings/bearing_002.gif" title="See the image full size"><img src="images/services/bearings/thumbs/bearing_002.gif" alt="Bearing Test 2"/></a></li>
+        <li class="thumbnail"><a href="images/services/bearings/bearing_002.gif" title="See the image full size"><img src="images/services/bearings/thumbs/bearing_002.gif" alt="Bearing Test 2"/></a></li>
       </ul>
     </div>
     <!--add footer-->
