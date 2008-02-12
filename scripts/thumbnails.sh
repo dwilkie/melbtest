@@ -12,7 +12,9 @@
 #######################################################################
 clear
 find "$1" -type f -exec chmod a-x,a-w,a-r,u+w,u+r,g+r,o+r {} \;
-for f in `find "$1" -type f`
-  new_file=$(echo $f | tr A-Z a-z | tr ' ' _)
-  mv f new_file
+for f in `find "$1" -type f -name "*"`;
+do
+  echo "$f"
+  # file=$(echo $f | tr A-Z a-z | tr ' ' _)
+  # mv f file
 done
