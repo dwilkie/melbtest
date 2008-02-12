@@ -1,7 +1,8 @@
 #####################################################################
 #   FILE: thumbnails.sh
 #
-#   A shell script that removes spaces from filenames, changes file permissions, and generates thumbnails from images
+#   A shell script that removes spaces from filenames, changes file 
+permissions, and generates thumbnails from images
 #
 #   Author:
 #   David Wilkie (dwilkie@gmail.com)
@@ -11,4 +12,4 @@
 #   todo:
 #######################################################################
 clear
-find . -type f -exec chmod a-x,a-w,a-r,u+w,u+r,g+r,o+r {} \;
+find "$1" -type f -exec chmod a-x,a-w,a-r,u+w,u+r,g+r,o+r {} \;
