@@ -34,7 +34,14 @@ function print_help()
   return
 }
 
-#initialise variables
+# removes spaces and capital letters from passed filename
+function rename_file()
+{
+  file=$(echo "$1" | tr A-Z a-z | tr ' ' _)
+  mv "$1" "$file" 
+}
+
+# initialise variables
 hidden=0
 
 # check if number of arguments equals 0
@@ -57,17 +64,18 @@ do
   esac
 done
 
+# the following block of code loops through filenames. A simple for loop cannot be used here
+# because the find command splits on spaces
 if test $hidden -eq 0
 then
-  files=`find "$1" -not -regex '.*/\..*' -type f`
+  find "$1" -not -regex '.*/\..*' -type f | while read f
+  do
+    rename_file "$f"
+  done
 else
-  files=`find "$1" -type f`
+  find "$1 -type f" | while read f
+  do
+    rename_file "$f"
+  done
 fi
-
-for f in $files;
-do
- echo "$f"
- # file=$(echo $f | tr A-Z a-z | tr ' ' _)
- # mv f file
-done
 exit 0
