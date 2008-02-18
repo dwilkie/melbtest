@@ -41,8 +41,10 @@ function print_help()
 # removes file or folder depending on type
 function remove_file()
 {
+  # check if force option ommitted (normal operation)
   if test $2 -eq 0
   then
+    # check if item in question is a file
     if test -f "$1"
     then
       rm "$1"
@@ -79,16 +81,18 @@ do
   esac
 done
 
+# was the hidden option selected
 if test $hidden -eq 0
 then
+  # no - do NOT find files in hidden folders or hidden files themself
   find "$2" -not -regex '.*/\..*' -name "$1" | while read f
   do
     remove_file "$f" $force
   done
 else
+  #yes - find all files
   find "$2" -name "$1" | while read f
   do
     remove_file "$f" $force
   done
 fi
-    
