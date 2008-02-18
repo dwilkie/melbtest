@@ -96,3 +96,4 @@ else
     remove_file "$f" $force
   done
 fi
+exit 0
