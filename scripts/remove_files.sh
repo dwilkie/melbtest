@@ -9,6 +9,7 @@
 #
 #   Modified:
 #   Version 0.1; 2008-02-14; Script created - added help, header comments, optional arguments for processing hidden files and forcing deletion of folders - DCW
+#   Version 0.2; 2008-02-18; Added functionality to delete matching files or folders
 #
 #   Usage:
 #   remove_files [OPTIONS]...[ITEM TO DELETE]...[FOLDER]...
@@ -37,6 +38,22 @@ function print_help()
   return
 }
 
+# removes file or folder depending on type
+function remove_file()
+{
+  if test $2 -eq 0
+  then
+    if test -f "$1"
+    then
+      rm "$1"
+    else
+      rmdir "$1"
+    fi
+  else
+    rm -rf "$1"
+  fi
+}
+
 # initialise variables
 hidden=0
 force=0
@@ -61,3 +78,17 @@ do
   *) break;;
   esac
 done
+
+if test $hidden -eq 0
+then
+  find "$2" -not -regex '.*/\..*' -name "$1" | while read f
+  do
+    remove_file "$f" $force
+  done
+else
+  find "$2" -name "$1" | while read f
+  do
+    remove_file "$f" $force
+  done
+fi
+    
