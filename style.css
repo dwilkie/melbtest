@@ -147,15 +147,18 @@ div.footer
   font-size: 0.8em;
 }
 
-ul li.thumbnail
+div.thumbnail
 {
-  list-style: none;
   float: left;
-  padding: 2em;
-  
+  width: 200px;
+  height: 300px;
+  border: 1px solid #999;
+  margin: 0 15px 15px 0;
+  padding: 1em;
+  text-align: center;
 }
 
-ul li.thumbnail img
+div.thumbnail img
 {
   border: none;
 }
