@@ -21,14 +21,14 @@
                                               added validation for blank contact name and email, modified code to clear form fields on successful submission, added reset button, added include for navbar,
                                               modified error messages to contain internal links to fields, added footer to external ssi and included it in this document and added more comments to code. - DCW
   Version 0.6; 2008-02-06 Modified title and h1 element. - DCW
-  Version 0.7; 2008-02-20 Updated link to navex and footer - DCW
+  Version 0.7; 2008-02-20 Updated link to navex, footer and stylesheet. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>Melbourne Testing Services::Feedback</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
   </head>
   <body>
     <?php
