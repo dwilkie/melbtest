@@ -2,7 +2,7 @@
 <!--
   FILE: contact.shtml
 
-  A webpage displaying general contact information
+  A page displaying general contact information
 
   Notes:
   This page validates to XHTML strict.
@@ -12,6 +12,7 @@
 
   Modified:
   Version 0.1; 2008-02-06 Page created. - DCW
+  Version 0.2; 2008-02-20 Updated link to navex and footer - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -22,7 +23,7 @@
   </head>
   <body>
     <!--add navbar-->
-    <!--#include virtual="navex.ssi" -->
+    <!--#include virtual="include/navex.ssi" -->
     <div class ="content">
       <h1>Contact</h1>
       <h2>Contact Details</h2>
@@ -56,6 +57,6 @@
       </p>
     </div>
     <!--add footer-->
-    <!--#include virtual="footer.ssi" -->
+    <!--#include virtual="include/footer.ssi" -->
   </body>
 </html>

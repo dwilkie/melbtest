@@ -12,6 +12,7 @@
 
   Modified:
   Version 0.1; 2008-02-07 Page created. - DCW
+  Version 0.2; 2008-02-20 Updated link to navex and footer and to service links- DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -22,7 +23,7 @@
   </head>
   <body>
     <!--add navbar-->
-    <!--#include virtual="navex.ssi" -->
+    <!--#include virtual="include/navex.ssi" -->
     <div class ="content">
       <h1>Home</h1>
       <p>
@@ -30,11 +31,11 @@
         operating in the eastern suburbs of Melbourne. We specialise in a number of <a href="services.shtml">services</a> including:
       </p>
       <ul>
-        <li><a href="tensile.shtml">Tensile tests</a></li>
-        <li><a href="compression.shtml">Compression tests</a></li>
-        <li><a href="fasteners.shtml">Tests on fasteners</a></li>
-        <li><a href="timber.shtml">Tests on timber</a></li>
-        <li><a href="concrete.shtml">Tests on concrete</a></li>
+        <li><a href="services/tensile.shtml">Tensile tests</a></li>
+        <li><a href="services/compression.shtml">Compression tests</a></li>
+        <li><a href="services/fasteners.shtml">Tests on fasteners</a></li>
+        <li><a href="services/timber.shtml">Tests on timber</a></li>
+        <li><a href="services/concrete.shtml">Tests on concrete</a></li>
         <li><a href="services.shtml">More</a></li>
       </ul>
       <p>
@@ -42,6 +43,6 @@
       </p>
     </div>
     <!--add footer-->
-    <!--#include virtual="footer.ssi" -->
+    <!--#include virtual="include/footer.ssi" -->
   </body>
 </html>

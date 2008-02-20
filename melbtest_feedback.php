@@ -21,6 +21,7 @@
                                               added validation for blank contact name and email, modified code to clear form fields on successful submission, added reset button, added include for navbar,
                                               modified error messages to contain internal links to fields, added footer to external ssi and included it in this document and added more comments to code. - DCW
   Version 0.6; 2008-02-06 Modified title and h1 element. - DCW
+  Version 0.7; 2008-02-20 Updated link to navex and footer - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -32,7 +33,7 @@
   <body>
     <?php
       //add navbar
-      include("navex.ssi"); 
+      include("include/navex.ssi"); 
     ?>
     <div class ="content">
       <h1>Feedback</h1>
@@ -361,7 +362,7 @@
     <!--footer section-->
     <?php
       //add footer
-      include("footer.ssi"); 
+      include("include/footer.ssi"); 
     ?>
   </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+  FILE: services.shtml
+
+  A page displaying a summary of services offered
+
+  Notes:
+  This page validates to XHTML strict.
+
+  Author:
+  David Wilkie (dwilkie@gmail.com)
+
+  Modified:
+  Version 0.1; 2008-02-20 Page created. - DCW
+  todo:
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Melbourne Testing Services::Services</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <!--add navbar-->
+    <!--#include virtual="include/navex.ssi" -->
+    <div class ="content">
+      <h1>Services</h1>
+      <p>
+        We offer a wide range of testing solutions. Select a service below or <a href="contact.shtml">contact us</a> for more information.
+      </p>
+      <ul>
+        <li><a href="services/bearings.shtml">Bearings</a></li>
+        <li><a href="services/coating_thickness.shtml">Coating Thickness</a></li>
+        <li><a href="services/compression.shtml">Compression</a></li>
+        <li><a href="services/compression.shtml">Concrete</a></li>
+        <li><a href="services/compression.shtml">Fasteners</a></li>
+        <li><a href="services/compression.shtml">Flexure</a></li>
+        <li><a href="services/compression.shtml">Formwork</a></li>
+        <li><a href="services/compression.shtml">Proof Load</a></li>
+        <li><a href="services/compression.shtml">Rubber Products</a></li>
+        <li><a href="services/compression.shtml">Scaffolds</a></li>
+        <li><a href="services/compression.shtml">Steel Reinforcing</a></li>
+        <li><a href="services/compression.shtml">Structures</a></li>
+        <li><a href="services/compression.shtml">Tensile</a></li>
+        <li><a href="services/compression.shtml">Timber</a></li>
+        <li><a href="services/compression.shtml">Other</a></li>
+      </ul>
+    </div>
+    <!--add footer-->
+    <!--#include virtual="include/footer.ssi" -->
+  </body>
+</html>
