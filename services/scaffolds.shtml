@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+  FILE: scaffolds.shtml
+
+  A service page describing tests on scaffolds
+
+  Notes:
+  This page validates to XHTML strict.
+
+  Author:
+  David Wilkie (dwilkie@gmail.com)
+
+  Modified:
+  Version 0.1; 2008-02-20 Page created. - DCW
+  todo:
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Melbourne Testing Services::Scaffolds</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <!--add navbar-->
+    <!--#include virtual="../include/navex.ssi" -->
+    <div class ="content">
+      <h1>Scaffolds</h1>
+      <p>
+        Testing of scaffold systems, roof anchor devices or scaffold components to 
+        the applicable Australian Standards is provided.
+      </p>
+      <div class="thumbnail">
+        <a href="images/services/scaffolds/scaffold_1.gif" title="See the image full size"><img src="images/services/scaffolds/thumbs/scaffold_1.gif" alt="Scaffold 1"/></a>
+        Scaffold Test 1
+      </div>
+      <div class="thumbnail">
+        <a href="images/services/scaffolds/scaffold_2.gif" title="See the image full size"><img src="images/services/scaffolds/thumbs/scaffold_2.gif" alt="Scaffold 2"/></a>
+        Scaffold Test 2
+      </div>
+      <div class="thumbnail">
+        <a href="images/services/scaffolds/scaffold_3.gif" title="See the image full size"><img src="images/services/scaffolds/thumbs/scaffold_3.gif" alt="Scaffold 3"/></a>
+        Scaffold Test 3
+      </div>
+      <div class="thumbnail">
+        <a href="images/services/scaffolds/scaffold_4.gif" title="See the image full size"><img src="images/services/scaffolds/thumbs/scaffold_4.gif" alt="Scaffold 4"/></a>
+        Scaffold Test 4
+      </div>
+      <div class="thumbnail">
+        <a href="images/services/scaffolds/scaffold_5.gif" title="See the image full size"><img src="images/services/scaffolds/thumbs/scaffold_5.gif" alt="Scaffold 4"/></a>
+        Scaffold Test 5
+      </div>
+      <div class="thumbnail">
+        <a href="images/services/scaffolds/scaffold_6.gif" title="See the image full size"><img src="images/services/scaffolds/thumbs/scaffold_6.gif" alt="Scaffold 6"/></a>
+        Scaffold Test 6
+      </div>
+    </div>
+    <!--add footer-->
+    <!--#include virtual="../include/footer.ssi" -->
+  </body>
+</html>
