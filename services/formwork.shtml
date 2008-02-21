@@ -31,19 +31,19 @@
         in accordance with AS 3610-1995.
       </p>
       <div class="thumbnail">
-        <a href="images/services/formwork_props/form_1.gif" title="See the image full size"><img src="images/services/formwork_props/thumbs/form_1.gif" alt="Formwork 1"/></a>
+        <a href="../images/services/formwork_props/form_1.gif" title="See the image full size"><img src="../images/services/formwork_props/thumbs/form_1.gif" alt="Formwork 1"/></a>
         Formwork Test 1
       </div>
       <div class="thumbnail">
-        <a href="images/services/formwork_props/form_2.gif" title="See the image full size"><img src="images/services/formwork_props/thumbs/form_2.gif" alt="Formwork 2"/></a>
+        <a href="../images/services/formwork_props/form_2.gif" title="See the image full size"><img src="../images/services/formwork_props/thumbs/form_2.gif" alt="Formwork 2"/></a>
         Formwork Test 2
       </div>
       <div class="thumbnail">
-        <a href="images/services/formwork_props/form_3.gif" title="See the image full size"><img src="images/services/formwork_props/thumbs/form_3.gif" alt="Formwork Test 2 Bending"/></a>
+        <a href="../images/services/formwork_props/form_3.gif" title="See the image full size"><img src="../images/services/formwork_props/thumbs/form_3.gif" alt="Formwork Test 2 Bending"/></a>
         Formwork Test 2 Bending
       </div>
       <div class="thumbnail">
-        <a href="images/services/formwork_props/form_4.gif" title="See the image full size"><img src="images/services/formwork_props/thumbs/form_4.gif" alt="Formwork Test 2 Specimens"/></a>
+        <a href="../images/services/formwork_props/form_4.gif" title="See the image full size"><img src="../images/services/formwork_props/thumbs/form_4.gif" alt="Formwork Test 2 Specimens"/></a>
         Formwork Test 2 Specimens
       </div>
     </div>
