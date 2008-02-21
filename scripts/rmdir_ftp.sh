@@ -22,7 +22,13 @@
 #
 #  Examples:
 #  rmdir_ftp -u john -p secret my_unwanted_folder ftp.myserver.com
-#   todo:
+# 
+#  Requirements:
+#  ncftp3 (http://www.ncftp.com/)
+#
+#  Bugs:
+#
+#  todo:
 ######################################################################################################################
 
 # Constants
@@ -32,32 +38,10 @@ USERNAME=anonymous
 # Default password
 PASSWORD=anonymous
 
-function remove_dir()
-{
-  echo "DEL $1"
-  ncftp3 -u "$user" -p "$pass" "$host" << EOF
-  cd $1
-  rm *
-  bye
-EOF
-  echo $test
-  file_list="$(ncftpls -u $user -p $pass ftp://$host/$1)"
-  for dir in $file_list
-  do
-    parent=$1/`basename "$dir"`
-    echo "$parent"
-    remove_dir "$parent"
-  done
-  ncftp3 -u "$user" -p "$pass" "$host" << EOF
-  rmdir $1
-  bye
-EOF
-  return
-}
-
 # prints help for this script
 function print_help()
 {
+  echo
   echo "Usage:"
   echo "rmdir_ftp [OPTIONS]...[DIRECTORY TO DELETE]...[SERVER]..."
   echo "Completely removes DIRECTORY TO DELETE and all of its contents from the server"
@@ -70,6 +54,44 @@ function print_help()
   echo
   echo "Examples:"
   echo "rmdir_ftp -u john -p secret my_unwanted_folder ftp.myserver.com"
+  return
+}
+
+# a recursive function used to remove an entire directory from an ftp server
+function remove_dir()
+{
+  # get a list of files and directories that need to be deleted
+  file_list="$(ncftpls -u $user -p $pass -a ftp://$host/$1)"
+
+  # is the list empty
+  if test "$file_list"
+  then
+    # no - therefore the path specified is infact a directory
+    # log on to host, change directory into folder that is to be removed and remove all files. Then logoff.
+    # << EOF is an input redirection - All lines following << EOF are redirected to the input until EOF is reached in this script.
+    # The redirected commands are ftp commands. The marker EOF (can be called anything) must not have spaces in front of it!
+    ncftp3 -u "$user" -p "$pass" "$host" << EOF
+cd $1
+rm *
+bye
+EOF
+    # Now that the FILES have been deleted from the current directory get a new directory listing.
+    # There SHOULD only be FOLDERS remaining, however this may not be the case. (e.g. permission errors)
+    file_list="$(ncftpls -u $user -p $pass ftp://$host/$1)"
+    
+    # Go through each directory in the current directory and run this function again
+    for dir in $file_list
+    do
+      remove_dir $1/`basename "$dir"`
+    done
+    
+    # Once the script gets to here the current directory has no more folders in it.
+    # Reconnect to the ftp server, remove the current directory and logoff again.
+    ncftp3 -u "$user" -p "$pass" "$host" << EOF
+rmdir $1
+bye
+EOF
+  fi
   return
 }
 
@@ -115,17 +137,22 @@ then
   pass=$PASSWORD
 fi
 
+# initialise variables
 host=$2
+
+# get a list of files and directories that need to be deleted
 file_list="$(ncftpls -u $user -p $pass ftp://$host/$1)"
 
-if test -z $file_list
+# is the list empty
+if test -z "$file_list"
 then
+  # yes - therefore the directory specified does not exist - print message and exit
   echo
   echo "DIRECTORY TO DELETE does not exist"
   print_help
   exit 1
 fi
 
+# Remove the directory
 remove_dir "$1"
-
 exit 0
