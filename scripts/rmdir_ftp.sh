@@ -32,6 +32,29 @@ USERNAME=anonymous
 # Default password
 PASSWORD=anonymous
 
+function remove_dir()
+{
+  echo "DEL $1"
+  ncftp3 -u "$user" -p "$pass" "$host" << EOF
+  cd $1
+  rm *
+  bye
+EOF
+  echo $test
+  file_list="$(ncftpls -u $user -p $pass ftp://$host/$1)"
+  for dir in $file_list
+  do
+    parent=$1/`basename "$dir"`
+    echo "$parent"
+    remove_dir "$parent"
+  done
+  ncftp3 -u "$user" -p "$pass" "$host" << EOF
+  rmdir $1
+  bye
+EOF
+  return
+}
+
 # prints help for this script
 function print_help()
 {
@@ -92,16 +115,17 @@ then
   pass=$PASSWORD
 fi
 
-file_list="$(ncftpls -u $user -p $pass ftp://$2/$1)"
-for dir in $LIST
-do
-  rdir="/$1/${dir}"
-  ncftp -u "$user" -p "$pass" $2 << EOF
-    cd $rdir
-    rm *
-    rmdir $rdir
-    quit
-    EOF
-done
+host=$2
+file_list="$(ncftpls -u $user -p $pass ftp://$host/$1)"
+
+if test -z $file_list
+then
+  echo
+  echo "DIRECTORY TO DELETE does not exist"
+  print_help
+  exit 1
+fi
+
+remove_dir "$1"
 
 exit 0
