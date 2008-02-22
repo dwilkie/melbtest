@@ -145,6 +145,7 @@ div.footer
   margin-left: 6em;
   text-align: center;
   font-size: 0.8em;
+  float: left;
 }
 
 div.thumbnail
