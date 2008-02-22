@@ -29,21 +29,21 @@
         We offer a wide range of testing solutions. Select a service below or <a href="contact.shtml">contact us</a> for more information.
       </p>
       <ul>
-        <li><a href="services/bearings.shtml">Bearings</a></li>
-        <li><a href="services/coating_thickness.shtml">Coating Thickness</a></li>
-        <li><a href="services/compression.shtml">Compression</a></li>
-        <li><a href="services/compression.shtml">Concrete</a></li>
-        <li><a href="services/compression.shtml">Fasteners</a></li>
-        <li><a href="services/compression.shtml">Flexure</a></li>
-        <li><a href="services/compression.shtml">Formwork</a></li>
-        <li><a href="services/compression.shtml">Proof Load</a></li>
-        <li><a href="services/compression.shtml">Rubber Products</a></li>
-        <li><a href="services/compression.shtml">Scaffolds</a></li>
-        <li><a href="services/compression.shtml">Steel Reinforcing</a></li>
-        <li><a href="services/compression.shtml">Structures</a></li>
-        <li><a href="services/compression.shtml">Tensile</a></li>
-        <li><a href="services/compression.shtml">Timber</a></li>
-        <li><a href="services/compression.shtml">Other</a></li>
+        <li><a href="bearings.shtml">Bearings</a></li>
+        <li><a href="coating_thickness.shtml">Coating Thickness</a></li>
+        <li><a href="compression.shtml">Compression</a></li>
+        <li><a href="concrete.shtml">Concrete</a></li>
+        <li><a href="fasteners.shtml">Fasteners</a></li>
+        <li><a href="flexure.shtml">Flexure</a></li>
+        <li><a href="formwork.shtml">Formwork</a></li>
+        <li><a href="proof_load.shtml">Proof Load</a></li>
+        <li><a href="rubber.shtml">Rubber Products</a></li>
+        <li><a href="scaffolds.shtml">Scaffolds</a></li>
+        <li><a href="steel_reinforcing.shtml">Steel Reinforcing</a></li>
+        <li><a href="structures.shtml">Structures</a></li>
+        <li><a href="tensile.shtml">Tensile</a></li>
+        <li><a href="timber.shtml">Timber</a></li>
+        <li><a href="other.shtml">Other</a></li>
       </ul>
     </div>
     <!--add footer-->

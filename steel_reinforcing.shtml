@@ -18,11 +18,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>Melbourne Testing Services::Steel Reinforcing</title>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
   </head>
   <body>
     <!--add navbar-->
-    <!--#include virtual="../include/navex.ssi" -->
+    <!--#include virtual="include/navex.ssi" -->
     <div class ="content">
       <h1>Steel Reinforcing</h1>
       <p>
@@ -33,15 +33,15 @@
         who require routine testing of their products.
       </p>
       <div class="thumbnail">
-        <a href="../images/services/steel_reinforcing/reo_1.gif" title="See the image full size"><img src="../images/services/steel_reinforcing/thumbs/reo_1.gif" alt="Reinforcing 1"/></a>
+        <a href="images/services/steel_reinforcing/reo_1.gif" title="See the image full size"><img src="images/services/steel_reinforcing/thumbs/reo_1.gif" alt="Reinforcing 1"/></a>
         Reinforcing Test 1
       </div>
       <div class="thumbnail">
-        <a href="../images/services/steel_reinforcing/reo_2.gif" title="See the image full size"><img src="../images/services/steel_reinforcing/thumbs/reo_2.gif" alt="Reinforcing 2"/></a>
+        <a href="images/services/steel_reinforcing/reo_2.gif" title="See the image full size"><img src="images/services/steel_reinforcing/thumbs/reo_2.gif" alt="Reinforcing 2"/></a>
         Reinforcing Test 2
       </div>
     </div>
     <!--add footer-->
-    <!--#include virtual="../include/footer.ssi" -->
+    <!--#include virtual="include/footer.ssi" -->
   </body>
 </html>

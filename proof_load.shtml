@@ -18,11 +18,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>Melbourne Testing Services::Proof Load</title>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
   </head>
   <body>
     <!--add navbar-->
-    <!--#include virtual="../include/navex.ssi" -->
+    <!--#include virtual="include/navex.ssi" -->
     <div class ="content">
       <h1>Proof Load</h1>
       <p>
@@ -32,39 +32,39 @@
         support their specified working load limit (WLL).
       </p>
       <div class="thumbnail">
-        <a href="../images/services/proof_load/proof_1.gif" title="See the image full size"><img src="../images/services/proof_load/thumbs/proof_1.gif" alt="Proof Load 1"/></a>
+        <a href="images/services/proof_load/proof_1.gif" title="See the image full size"><img src="images/services/proof_load/thumbs/proof_1.gif" alt="Proof Load 1"/></a>
         Proof Load Test 1
       </div>
       <div class="thumbnail">
-        <a href="../images/services/proof_load/proof_2.gif" title="See the image full size"><img src="../images/services/proof_load/thumbs/proof_2.gif" alt="Proof Load 2"/></a>
+        <a href="images/services/proof_load/proof_2.gif" title="See the image full size"><img src="images/services/proof_load/thumbs/proof_2.gif" alt="Proof Load 2"/></a>
         Proof Load Test 2
       </div>
       <div class="thumbnail">
-        <a href="../images/services/proof_load/proof_3.gif" title="See the image full size"><img src="../images/services/proof_load/thumbs/proof_3.gif" alt="Proof Load 3"/></a>
+        <a href="images/services/proof_load/proof_3.gif" title="See the image full size"><img src="images/services/proof_load/thumbs/proof_3.gif" alt="Proof Load 3"/></a>
         Proof Load Test 3
       </div>
       <div class="thumbnail">
-        <a href="../images/services/proof_load/proof_4.gif" title="See the image full size"><img src="../images/services/proof_load/thumbs/proof_4.gif" alt="Proof Load 4"/></a>
+        <a href="images/services/proof_load/proof_4.gif" title="See the image full size"><img src="images/services/proof_load/thumbs/proof_4.gif" alt="Proof Load 4"/></a>
         Proof Load Test 4
       </div>
       <div class="thumbnail">
-        <a href="../images/services/proof_load/proof_5.gif" title="See the image full size"><img src="../images/services/proof_load/thumbs/proof_5.gif" alt="Proof Load 5"/></a>
+        <a href="images/services/proof_load/proof_5.gif" title="See the image full size"><img src="images/services/proof_load/thumbs/proof_5.gif" alt="Proof Load 5"/></a>
         Proof Load Test 5
       </div>
       <div class="thumbnail">
-        <a href="../images/services/proof_load/proof_6.gif" title="See the image full size"><img src="../images/services/proof_load/thumbs/proof_6.gif" alt="Proof Load 6"/></a>
+        <a href="images/services/proof_load/proof_6.gif" title="See the image full size"><img src="images/services/proof_load/thumbs/proof_6.gif" alt="Proof Load 6"/></a>
         Proof Load Test 6
       </div>
       <div class="thumbnail">
-        <a href="../images/services/proof_load/proof_7.gif" title="See the image full size"><img src="../images/services/proof_load/thumbs/proof_7.gif" alt="Proof Load 7"/></a>
+        <a href="images/services/proof_load/proof_7.gif" title="See the image full size"><img src="images/services/proof_load/thumbs/proof_7.gif" alt="Proof Load 7"/></a>
         Proof Load Test 7
       </div>
       <div class="thumbnail">
-        <a href="../images/services/proof_load/proof_8.gif" title="See the image full size"><img src="../images/services/proof_load/thumbs/proof_8.gif" alt="Proof Load 8"/></a>
+        <a href="images/services/proof_load/proof_8.gif" title="See the image full size"><img src="images/services/proof_load/thumbs/proof_8.gif" alt="Proof Load 8"/></a>
         Proof Load Test 8
       </div>
     </div>
     <!--add footer-->
-    <!--#include virtual="../include/footer.ssi" -->
+    <!--#include virtual="include/footer.ssi" -->
   </body>
 </html>

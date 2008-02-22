@@ -19,11 +19,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>Melbourne Testing Services::Bearings</title>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
   </head>
   <body>
     <!--add navbar-->
-    <!--#include virtual="../include/navex.ssi" -->
+    <!--#include virtual="include/navex.ssi" -->
     <div class ="content">
       <h1>Bearings</h1>
       <p>
@@ -32,15 +32,15 @@
         and in accordance with AS 5100.4, AS 1523-1981 Appendix A, AusRoads Bridge Design Code 1992, RTA B280 and similar methods.
       </p>
       <div class="thumbnail">
-        <a href="../images/services/bearings/bearing_1.gif" title="See the image full size"><img src="../images/services/bearings/thumbs/bearing_1.gif" alt="Bearing Test 1"/></a>
+        <a href="images/services/bearings/bearing_1.gif" title="See the image full size"><img src="images/services/bearings/thumbs/bearing_1.gif" alt="Bearing Test 1"/></a>
         Bearing Test
       </div>
       <div class="thumbnail">
-        <a href="../images/services/bearings/bearing_2.gif" title="See the image full size"><img src="../images/services/bearings/thumbs/bearing_2.gif" alt="Bearing Test 2"/></a>
+        <a href="images/services/bearings/bearing_2.gif" title="See the image full size"><img src="images/services/bearings/thumbs/bearing_2.gif" alt="Bearing Test 2"/></a>
         Bearing Test Plate
       </div>
     </div>
     <!--add footer-->
-    <!--#include virtual="../include/footer.ssi" -->
+    <!--#include virtual="include/footer.ssi" -->
   </body>
 </html>

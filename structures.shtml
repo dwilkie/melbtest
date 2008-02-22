@@ -18,11 +18,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>Melbourne Testing Services::Structures</title>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
   </head>
   <body>
     <!--add navbar-->
-    <!--#include virtual="../include/navex.ssi" -->
+    <!--#include virtual="include/navex.ssi" -->
     <div class ="content">
       <h1>Structures</h1>
       <p>
@@ -31,43 +31,43 @@
         testing frame for structural integrity and ultimate load capacity.
       </p>
       <div class="thumbnail">
-        <a href="../images/services/structures/struct_1.gif" title="See the image full size"><img src="../images/services/structures/thumbs/struct_1.gif" alt="Structure 1"/></a>
+        <a href="images/services/structures/struct_1.gif" title="See the image full size"><img src="images/services/structures/thumbs/struct_1.gif" alt="Structure 1"/></a>
         Structural Test 1
       </div>
       <div class="thumbnail">
-        <a href="../images/services/structures/struct_2.gif" title="See the image full size"><img src="../images/services/structures/thumbs/struct_2.gif" alt="Structure 2"/></a>
+        <a href="images/services/structures/struct_2.gif" title="See the image full size"><img src="images/services/structures/thumbs/struct_2.gif" alt="Structure 2"/></a>
         Structural Test 2
       </div>
       <div class="thumbnail">
-        <a href="../images/services/structures/struct_4.gif" title="See the image full size"><img src="../images/services/structures/thumbs/struct_4.gif" alt="Structure 3"/></a>
+        <a href="images/services/structures/struct_4.gif" title="See the image full size"><img src="images/services/structures/thumbs/struct_4.gif" alt="Structure 3"/></a>
         Structural Test 3
       </div>
       <div class="thumbnail">
-        <a href="../images/services/structures/struct_5.gif" title="See the image full size"><img src="../images/services/structures/thumbs/struct_5.gif" alt="Structure 4"/></a>
+        <a href="images/services/structures/struct_5.gif" title="See the image full size"><img src="images/services/structures/thumbs/struct_5.gif" alt="Structure 4"/></a>
         Structural Test 4
       </div>
       <div class="thumbnail">
-        <a href="../images/services/structures/struct_6.gif" title="See the image full size"><img src="../images/services/structures/thumbs/struct_6.gif" alt="Structure 5"/></a>
+        <a href="images/services/structures/struct_6.gif" title="See the image full size"><img src="images/services/structures/thumbs/struct_6.gif" alt="Structure 5"/></a>
         Structural Test 5
       </div>
       <div class="thumbnail">
-        <a href="../images/services/structures/struct_7.gif" title="See the image full size"><img src="../images/services/structures/thumbs/struct_7.gif" alt="Structure 6"/></a>
+        <a href="images/services/structures/struct_7.gif" title="See the image full size"><img src="images/services/structures/thumbs/struct_7.gif" alt="Structure 6"/></a>
         Structural Test 6
       </div>
       <div class="thumbnail">
-        <a href="../images/services/structures/struct_8.gif" title="See the image full size"><img src="../images/services/structures/thumbs/struct_8.gif" alt="Structure 7"/></a>
+        <a href="images/services/structures/struct_8.gif" title="See the image full size"><img src="images/services/structures/thumbs/struct_8.gif" alt="Structure 7"/></a>
         Structural Test 7
       </div>
       <div class="thumbnail">
-        <a href="../images/services/structures/struct_9.gif" title="See the image full size"><img src="../images/services/structures/thumbs/struct_9.gif" alt="Structure 8"/></a>
+        <a href="images/services/structures/struct_9.gif" title="See the image full size"><img src="images/services/structures/thumbs/struct_9.gif" alt="Structure 8"/></a>
         Structural Test 8
       </div>
       <div class="thumbnail">
-        <a href="../images/services/structures/struct_10.gif" title="See the image full size"><img src="../images/services/structures/thumbs/struct_10.gif" alt="Structure 9"/></a>
+        <a href="images/services/structures/struct_10.gif" title="See the image full size"><img src="images/services/structures/thumbs/struct_10.gif" alt="Structure 9"/></a>
         Structural Test 9
       </div>
     </div>
     <!--add footer-->
-    <!--#include virtual="../include/footer.ssi" -->
+    <!--#include virtual="include/footer.ssi" -->
   </body>
 </html>
