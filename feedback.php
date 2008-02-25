@@ -22,6 +22,7 @@
                                               modified error messages to contain internal links to fields, added footer to external ssi and included it in this document and added more comments to code. - DCW
   Version 0.6; 2008-02-06 Modified title and h1 element. - DCW
   Version 0.7; 2008-02-20 Updated link to navex, footer and stylesheet. - DCW
+  Version 0.8; 2008-02-25 Added link to external javascript file. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -29,6 +30,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>Melbourne Testing Services::Feedback</title>
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <script src="javascript/script.js" type="text/javascript"></script>
   </head>
   <body>
     <?php
@@ -184,7 +186,8 @@
               <html>
                 <head>
                   <title>Feedback from MTS website</title>
-                </head>
+                  <script src="javascript/script.js" type="text/javascript"></script>
+  </head>
                 <body>
                   <p>
                     Hi '.$recipient_first_name.',<br /><br />

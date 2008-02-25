@@ -13,6 +13,7 @@
   Modified:
   Version 0.1; 2008-02-07 Page created. - DCW
   Version 0.2; 2008-02-20 Updated link to navex, footer, stylesheet and to service links. - DCW
+  Version 0.3; 2008-02-25 Added link to external javascript file. Fixed validation error with nata link (escaped amp signs) - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -20,14 +21,30 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>Melbourne Testing Services::Home</title>
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <script src="javascript/script.js" type="text/javascript"></script>
   </head>
   <body>
+
+    <!--add navbar-->
+      <img style="border:0;width:217px;height:127px" src="images/mts_logo.png" alt="Valid CSS!" />
+      <img style="border:0;width:217px;height:127px" src="images/mts_logo.png" alt="Valid CSS!" />
+      <div class="navex">
+      <ul>
+        <li><a href="index.shtml">Home</a></li>
+        <li><a href="about.shtml">About Us</a></li>
+        <li><a href="services.shtml">Services</a></li>
+        <li><a href="contact.shtml">Contact</a></li>
+        <li><a href="feedback.php">Feedback</a></li>
+
+      </ul>
+    </div>
+  
     <!--add navbar-->
     <!--#include virtual="include/navex.ssi" -->
     <div class ="content">
       <h1>Home</h1>
       <p>
-        Melbourne Testing Services is a <a href="http://www.nata.asn.au/index.cfm?objectid=91A6633A-65B1-96AB-7EAF2879B94B08C3&facilityFile=1040.xml&action=displayFacility">NATA accredited</a> laboratory 
+        Melbourne Testing Services is a <a href="http://www.nata.asn.au/index.cfm?objectid=91A6633A-65B1-96AB-7EAF2879B94B08C3&amp;facilityFile=1040.xml&amp;action=displayFacility">NATA accredited</a> laboratory 
         operating in the eastern suburbs of Melbourne. We specialise in a number of <a href="services.shtml">services</a> including:
       </p>
       <ul>

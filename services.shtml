@@ -12,6 +12,7 @@
 
   Modified:
   Version 0.1; 2008-02-20 Page created. - DCW
+  Version 0.2; 2008-02-25 Added link to external javascript file. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -19,6 +20,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>Melbourne Testing Services::Services</title>
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <script src="javascript/script.js" type="text/javascript"></script>
   </head>
   <body>
     <!--add navbar-->
