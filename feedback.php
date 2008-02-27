@@ -36,7 +36,7 @@
   <body>
     <?php
       //add logos
-      include("include/logos.ssi"
+      include("include/logos.ssi");
       //add navbar
       include("include/navex.ssi"); 
     ?>

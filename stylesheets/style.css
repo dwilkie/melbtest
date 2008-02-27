@@ -153,7 +153,6 @@ div.footer
   margin-left: 6em;
   text-align: center;
   font-size: 0.8em;
-  float: center;
 }
 
 /* needed to remove underline from css and html validation images in ie6 */
