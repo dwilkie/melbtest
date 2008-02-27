@@ -1,5 +1,5 @@
 /*
-  CSS for Melbtest feedback form
+  CSS for Melbbourne Testing Services Website
   Author: David Wilkie (dwilkie@gmail.com)
   todo: 
   */
@@ -14,12 +14,6 @@ body
 div.content
 {
    margin-left: 6em;
-}
-
-div.content p
-{
-  margin-top: 5em;
-  padding: 0.5em;
 }
 
 h1
@@ -113,7 +107,7 @@ div.navex ul
   list-style-type: none;
   padding: 0em;
   margin: 0em;
-  margin-top: 9em;
+  margin-top: 7.5em;
   position: absolute;
   /* following line needed to make internet explorer work */
   left: 0.5em;
@@ -153,6 +147,7 @@ div.footer
   margin-left: 6em;
   text-align: center;
   font-size: 0.8em;
+  clear: both;
 }
 
 /* needed to remove underline from css and html validation images in ie6 */
@@ -175,6 +170,11 @@ div.thumbnail
 div.thumbnail img
 {
   border: none;
+}
+
+div.logos
+{
+  padding-bottom: 2em;
 }
 
 div.logos img.mts_logo
