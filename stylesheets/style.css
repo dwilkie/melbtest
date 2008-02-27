@@ -13,7 +13,13 @@ body
 
 div.content
 {
-  margin-left: 6em;
+   margin-left: 6em;
+}
+
+div.content p
+{
+  margin-top: 5em;
+  padding: 0.5em;
 }
 
 h1
@@ -107,8 +113,10 @@ div.navex ul
   list-style-type: none;
   padding: 0em;
   margin: 0em;
-  margin-top: 8em;
+  margin-top: 9em;
   position: absolute;
+  /* following line needed to make internet explorer work */
+  left: 0.5em;
 }
 
 div.navex ul li
@@ -145,7 +153,13 @@ div.footer
   margin-left: 6em;
   text-align: center;
   font-size: 0.8em;
-  float: left;
+  float: center;
+}
+
+/* needed to remove underline from css and html validation images in ie6 */
+div.footer a.validate
+{
+  text-decoration: none;
 }
 
 div.thumbnail
@@ -162,4 +176,16 @@ div.thumbnail
 div.thumbnail img
 {
   border: none;
+}
+
+div.logos img.mts_logo
+{
+  float: left;
+  border: none;
+}
+
+div.logos img.nata_logo
+{
+  border: none;
+  float: right;
 }

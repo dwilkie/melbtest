@@ -23,6 +23,7 @@
   Version 0.6; 2008-02-06 Modified title and h1 element. - DCW
   Version 0.7; 2008-02-20 Updated link to navex, footer and stylesheet. - DCW
   Version 0.8; 2008-02-25 Added link to external javascript file. - DCW
+  Version 0.9; 2008-02-26 Added include for MTS and NATA logos. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -34,6 +35,8 @@
   </head>
   <body>
     <?php
+      //add logos
+      include("include/logos.ssi"
       //add navbar
       include("include/navex.ssi"); 
     ?>
@@ -189,6 +192,8 @@
                   <script src="javascript/script.js" type="text/javascript"></script>
   </head>
                 <body>
+    <!--add logos-->
+    <!--#include virtual="include/logos.ssi"-->
                   <p>
                     Hi '.$recipient_first_name.',<br /><br />
                     I have left feedback on your site. The details are as follows: <br /><br />';
