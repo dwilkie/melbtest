@@ -13,7 +13,8 @@ body
 
 div.content
 {
-   margin-left: 6em;
+  margin-top: 3em;
+  margin-left: 6em;
 }
 
 h1
@@ -187,4 +188,20 @@ div.logos img.nata_logo
 {
   border: none;
   float: right;
+}
+
+/*Style for image of lab */
+#factory_front
+{
+  float: left;
+  margin-right: 1em;
+}
+
+/*Style for Google Map integeration */
+#map_canvas
+{
+  margin-left: 3em;
+  float: left;
+  width: 400px;
+  height: 450px;
 }
