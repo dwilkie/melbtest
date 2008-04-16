@@ -200,8 +200,7 @@ div.logos img.nata_logo
 /*Style for Google Map integeration */
 #map_canvas
 {
-  margin-left: 3em;
   float: left;
   width: 400px;
-  height: 450px;
+  height: 400px;
 }
