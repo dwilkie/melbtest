@@ -14,6 +14,7 @@
   Version 0.1; 2008-02-20 Page created. - DCW
   Version 0.2; 2008-02-25 Added link to external javascript file. - DCW
   Version 0.3; 2008-02-26 Added include for MTS and NATA logos. - DCW
+  Version 0.4; 2008-11-22 Modified text. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -43,14 +44,14 @@
       </p>
       <p>
         Melbourne Testing Services is accredited with the National Association of Testing Authorities 
-        (NATA) and complies with the requirements of ISO/IEC 17025 (1999) ensuring that all testing is carried
+        (NATA) and complies with the requirements of ISO/IEC 17025 (2005) ensuring that all testing is carried
         out in accordance with strict quality control initiatives and all relevant Australian and
         International Standards are adhered to.
       </p>
       <p>
         Our accredited laboratory is equipped with a wide range of mechanical and structural testing equipment,
         including a 500kN servo hydraulic testing frame suitable for testing large structures.
-        A modern 300kN servo-electromechanical, universal testing machine also compliments the the MTS laboratory.
+        A modern 300kN servo-electromechanical, universal testing machine also compliments the MTS laboratory.
         This machine is operated by a closed loop computer control system which enables accurate test results
         for a large range of tension, shear and compression tests.
       </p>
