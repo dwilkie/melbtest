@@ -16,6 +16,7 @@
   Version 0.3; 2008-02-25 Added link to external javascript file. Fixed validation error with nata link (escaped amp signs) - DCW
   Version 0.4; 2008-02-26 Added include for MTS and NATA logos. - DCW
   Version 0.5; 2008-04-13 Added image of lab and google map integration. - DCW
+  Version 0.6; 2008-11-22 Added link to fatigue testing. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -43,6 +44,7 @@
         <li><a href="fasteners.shtml">Tests on fasteners</a></li>
         <li><a href="timber.shtml">Tests on timber</a></li>
         <li><a href="concrete.shtml">Tests on concrete</a></li>
+        <li><a href="fatigue.shtml">Fatigue testing</a></li>
         <li><a href="services.shtml">More</a></li>
       </ul>
       <p>
