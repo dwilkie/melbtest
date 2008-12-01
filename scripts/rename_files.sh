@@ -10,6 +10,7 @@
 #
 #   Modified:
 #   Version 0.1; 2008-02-14; Script created - added help, header comments, optional argument for processing hidden files and functionality to modify file names - DCW
+#   Version 0.2; 2008-12-02; Fixed error where renaming was occuring for same file names - DCW
 #
 #   Usage:
 #   rename_files [OPTIONS]...[FOLDER]...
@@ -38,7 +39,10 @@ function print_help()
 function rename_file()
 {
   file=$(echo "$1" | tr A-Z a-z | tr ' ' _)
-  mv "$1" "$file" 
+  if [ "$1" != "$file" ]
+  then
+    mv "$1" "$file" 
+  fi
 }
 
 # initialise variables
