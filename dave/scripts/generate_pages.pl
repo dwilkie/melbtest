@@ -18,4 +18,14 @@
 use strict;
 use warnings;
 use Iterator::IO;
+use Iterator::Util;
 
+# Constants
+use constant PHOTOS_FOLDER => "/home/dave/pictures";
+
+my $file_iterator = igrep {/\.jpg/} idir_listing (PHOTOS_FOLDER);
+while ($file_iterator->isnt_exhausted)
+{
+  my $next_value = $file_iterator->value();
+  print "$next_value\n";
+}
