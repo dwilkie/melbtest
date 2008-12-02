@@ -11,6 +11,7 @@
 #   Version 0.1; 2008-02-18; Script created. Added optional arguments for processing hidden files and folders and for specifying thumbnail size.
 #   Version 0.2; 2008-02-19; Added function for creating a thumbnail given a file path. Added optional argument for placing thumbnails under version 
 #                            control. Added regex in find commands to prevent thumnails being created from themselves.
+#   Version 0.3; 2008-12-02; Added check to make thumbnail only if it doesn't already exist
 #
 #   Usage:
 #   thumbnails [OPTIONS]...[FOLDER]...
@@ -78,9 +79,13 @@ function make_thumbnail()
 
   # set the output file name
   output_file=$dir_name/$OUTPUT_DIRECTORY/$pic_short_name.$OUTPUT_FORMAT
-
-  # make the thumbail using imagemagick convert function
-  convert $f -thumbnail $thumb_wdth $output_file
+  
+  # make thumbnail if it doesn't already exist
+  if test ! -f $output_file
+  then
+    # make the thumbail using imagemagick convert function
+    convert $f -thumbnail $thumb_wdth $output_file
+  fi
   
   # add thumbnails to version control if specified by user
   if test $subversion -eq 1

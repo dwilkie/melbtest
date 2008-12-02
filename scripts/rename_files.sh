@@ -22,7 +22,7 @@
 #   todo:
 ######################################################################################################################
 
-#prints help for this script
+# prints help for this script
 function print_help()
 {
   echo "Usage:"
