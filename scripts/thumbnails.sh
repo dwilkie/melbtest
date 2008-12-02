@@ -17,17 +17,19 @@
 #                            to move thumbnail into another folder. Added validation for checking that the
 #                            folder to search for images is valid and exists. Fixed bug where not 
 #                            specifying the second argument to -t caused an infinite loop (see comments
-#                            above option handling code)
+#                            above option handling code). Fixed bug where output folder was added
+#                            to version control multiple times and subversion was complaining.
 #
 #   Usage:
 #   thumbnails [OPTIONS]...[FOLDER]...
 #
-#   Creates a thumbnail from each image recursivley in FOLDER. By default the image is stored in 
-#   the PARENT_FOLDER/thumbs with the same name as the original image in gif format. Supports gif and jpg images.
+#   Creates a thumbnail from each image recursivley in FOLDER. By default the thumbnail is 200px 
+#   wide and stored in the PARENT_FOLDER/thumbs with the same name as the original image in gif format. 
+#   Supports gif and jpg images.
 #
 #   Options:
 #   -h process hidden files and files in hidden folders
-#   -t thumbnail width (pixels) e.g. -t 200 would create a thumbnail 200px wide maintaining aspect ratio
+#   -t thumbnail width (pixels) e.g. -t 300 would create a thumbnail 300px wide maintaining aspect ratio
 #   -mv [FOLDER] moves the thumbnail into FOLDER e.g. -mv /home/bob/foo would put the thumbnail in 
 #       /home/bob/foo/PARENT_FOLDER instead of PARENT_FOLDER/thumbs
 #   -v place the thumbnails under version control (subversion). Note subversion must be
@@ -53,11 +55,11 @@ function print_help()
   echo "Usage:"
   echo "thumbnails [OPTIONS]...FOLDER..."
   echo
-  echo "Creates a thumbnail from each image recursivley in FOLDER. By default the image is stored in the PARENT_FOLDER/thumbs with the same name as the original image in gif format. Supports gif and jpg images."
+  echo "Creates a thumbnail from each image recursivley in FOLDER. By default the thumbnail is 200px wide and stored in the PARENT_FOLDER/thumbs with the same name as the original image in gif format. Supports gif and jpg images."
   echo
   echo "Options:"
   echo "-h process hidden files and files in hidden folders"
-  echo "-t thumnail width (pixels) e.g. -t 300 would create a thumbnail 300px wide maintaining aspect ratio"
+  echo "-t thumbnail width (pixels) e.g. -t 300 would create a thumbnail 300px wide maintaining aspect ratio"
   echo "-mv [FOLDER] moves the thumbnail into FOLDER e.g. -mv /home/bob/foo would put the thumbnail in /home/bob/foo/PARENT_FOLDER instead of PARENT_FOLDER/thumbs"
   echo "-v place the thumbnails under version control (subversion). Note subversion must be installed and a repository set up"
   echo "--help display this help file and exit"
@@ -95,11 +97,12 @@ function make_thumbnail()
   if test ! -d $output_path
   then
     mkdir $output_path
-  fi
-
-  if test $subversion -eq 1
-  then
-    svn add $output_path
+    
+    # add directory to version control if specified by the user  
+    if test $subversion -eq 1
+    then
+      svn add $output_path
+    fi
   fi
 
   # set the output file name
