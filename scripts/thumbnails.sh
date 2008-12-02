@@ -8,19 +8,30 @@
 #   David Wilkie (dwilkie@gmail.com)
 #
 #   Modified:
-#   Version 0.1; 2008-02-18; Script created. Added optional arguments for processing hidden files and folders and for specifying thumbnail size.
-#   Version 0.2; 2008-02-19; Added function for creating a thumbnail given a file path. Added optional argument for placing thumbnails under version 
-#                            control. Added regex in find commands to prevent thumnails being created from themselves.
-#   Version 0.3; 2008-12-02; Added check to make thumbnail only if it doesn't already exist
+#   Version 0.1; 2008-02-18; Script created. Added optional arguments for processing hidden files and folders
+#                            and for specifying thumbnail size.
+#   Version 0.2; 2008-02-19; Added function for creating a thumbnail given a file path. Added optional
+#                            argument for placing thumbnails under version control. Added regex in
+#                            find commands to prevent thumnails being created from themselves.
+#   Version 0.3; 2008-12-02; Added check to make thumbnail only if it doesn't already exist. Added -mv option 
+#                            to move thumbnail into another folder. Added validation for checking that the
+#                            folder to search for images is valid and exists. Fixed bug where not 
+#                            specifying the second argument to -t caused an infinite loop (see comments
+#                            above option handling code)
 #
 #   Usage:
 #   thumbnails [OPTIONS]...[FOLDER]...
-#   Creates a thumbnail from each image recursivley in FOLDER. The image is stored in /thumbs with the same name as the original image in gif format. Supports gif and jpg images.
+#
+#   Creates a thumbnail from each image recursivley in FOLDER. By default the image is stored in 
+#   the PARENT_FOLDER/thumbs with the same name as the original image in gif format. Supports gif and jpg images.
 #
 #   Options:
 #   -h process hidden files and files in hidden folders
 #   -t thumbnail width (pixels) e.g. -t 200 would create a thumbnail 200px wide maintaining aspect ratio
-#   -v place the thumbnails under version control (subversion). Note subversion must be installed and a repository set up"
+#   -mv [FOLDER] moves the thumbnail into FOLDER e.g. -mv /home/bob/foo would put the thumbnail in 
+#       /home/bob/foo/PARENT_FOLDER instead of PARENT_FOLDER/thumbs
+#   -v place the thumbnails under version control (subversion). Note subversion must be
+#      installed and a repository set up
 #   --help displays the help file and exits
 #   todo:
 ######################################################################################################################
@@ -41,14 +52,15 @@ function print_help()
 {
   echo "Usage:"
   echo "thumbnails [OPTIONS]...FOLDER..."
-  echo "Creates a thumbnail from each image recursivley in FOLDER. The image is stored in /thumbs with the same name as the original image in gif format. Supports gif and jpg images."
+  echo
+  echo "Creates a thumbnail from each image recursivley in FOLDER. By default the image is stored in the PARENT_FOLDER/thumbs with the same name as the original image in gif format. Supports gif and jpg images."
   echo
   echo "Options:"
   echo "-h process hidden files and files in hidden folders"
   echo "-t thumnail width (pixels) e.g. -t 300 would create a thumbnail 300px wide maintaining aspect ratio"
+  echo "-mv [FOLDER] moves the thumbnail into FOLDER e.g. -mv /home/bob/foo would put the thumbnail in /home/bob/foo/PARENT_FOLDER instead of PARENT_FOLDER/thumbs"
   echo "-v place the thumbnails under version control (subversion). Note subversion must be installed and a repository set up"
   echo "--help display this help file and exit"
-  return
 }
 
 # makes a thumbnail given a file name
@@ -63,22 +75,35 @@ function make_thumbnail()
   # cut off the last 4 characters from the full name to remove extension (this assumes a 3 letter extension!)
   pic_short_name=${pic_full_name:0:`expr $pic_full_name_length - 4`}
 
-  # get the directory of the original image
-  dir_name=`dirname $1`
+  # get the directory PATH of the original image
+  dir_path=`dirname $1`
+
+  # are we 'moving' the thumbnails to another directory
+  if test $move_thumbs -eq 1
+  then
+    # yes - get the directory NAME of the original image
+    dir_name=`basename $dir_path`
+
+    # output directory is <path specified by the user after the mv flag>/<parent directory of this image>
+    output_path=$move_dir/$dir_name
+  else
+    # no - output directory is <parent directory of this image>/thumbs
+    output_path=$dir_path/$OUTPUT_DIRECTORY
+  fi
 
   # make a directory for the thumbnails if none exists
-  if test ! -d $dir_name/$OUTPUT_DIRECTORY
+  if test ! -d $output_path
   then
-    mkdir $dir_name/$OUTPUT_DIRECTORY
+    mkdir $output_path
   fi
 
   if test $subversion -eq 1
   then
-    svn add $dir_name/$OUTPUT_DIRECTORY
+    svn add $output_path
   fi
 
   # set the output file name
-  output_file=$dir_name/$OUTPUT_DIRECTORY/$pic_short_name.$OUTPUT_FORMAT
+  output_file=$output_path/$pic_short_name.$OUTPUT_FORMAT
   
   # make thumbnail if it doesn't already exist
   if test ! -f $output_file
@@ -97,6 +122,7 @@ function make_thumbnail()
 # initialise variables
 hidden=0
 subversion=0
+move_thumbs=0
 
 # check if number of arguments equals 0
 if [ $# -eq 0 ]
@@ -105,14 +131,21 @@ then
   exit 1
 fi
 
-# the following loop checks the arguments supplied acts according to the value of the arguement
+# the following loop checks the arguments supplied and acts according to the value of the argument
 # the shift command moves the argument off the stack. This changes the value of $# (number of arguments)
 # as well as the value of $1 (first argument). * is a wildcard and ) is part of the case statement.
+# another important fact about the shift command is that supplying shift n, replaces the need for
+# shift n times e.g. shift 2 is the same as shift; shift; However if n is larger than possible
+# then no arguments are shifted. This could cause an infinite loop if the user specfies for example
+# -t with no other argument. In this case shift does nothing and $# remains always at 1 and stuck in the 
+# while loop. To prevent this use shift ; n times
+
 while test $# -gt 0
 do
   case "$1" in
   -h) hidden=1 ; shift ;;
-  -t) tw="$2" ; shift 2 ;;
+  -t) tw="$2" ; shift ; shift ;;
+  -mv) move_thumbs=1 ; move_dir="$2" ; shift ; shift ;;
   -v) subversion=1 ; shift ;;
   --help) print_help; exit 0; shift ;;
   -*) print_help; exit 1; shift;;
@@ -128,6 +161,38 @@ then
 else
   #yes - use their selection
   thumb_wdth="$tw"
+fi
+
+# did the user specify to move the thumbnails to a different folder
+if test $move_thumbs -eq 1
+then
+  # yes - did they specify an existing folder to move the thumbs to
+  if test -d "$move_dir"
+  then
+    # yes - remove trailing '/' (if any)
+    move_dir=`dirname $move_dir`/`basename $move_dir`
+  else
+    # no - display error and exit
+    echo "The folder in which to move the thumnail to must already exist"
+    print_help
+    exit 1
+  fi
+fi
+
+# check to see if the user specified a folder to search in
+if test -z "$1"
+then
+  echo "No folder to search specified"
+  print_help
+  exit 1
+fi
+
+# check to see if the folder they specified actually exists
+if test ! -d "$1"
+then
+  echo "The folder in which to search does not exist"
+  print_help
+  exit 1
 fi
 
 # did the user supply the hidden option
