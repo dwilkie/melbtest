@@ -201,15 +201,16 @@ fi
 # did the user supply the hidden option
 if test $hidden -eq 0
 then
-  # no - do NOT find files in hidden folders or hidden files themselves. Find all files with allowed extensions except those already in the output 
-  # directory. This prevents thumbnails being created from existing thumbnails.
+  # no - do NOT find files in hidden folders or hidden files themselves. Find all files with allowed
+  # extensions except those already in the output directory. This prevents thumbnails being created from 
+  # existing thumbnails.
   find "$1" -not -regex ".*/$OUTPUT_DIRECTORY/.*" -not -regex '.*/\..*' -type f -iregex '.*\.\(jpg\|gif\)$' | while read f
   do
     make_thumbnail "$f"
   done
 else
-  # yes - find all files with allowed extensions except those already in the output directory. This prevents thumbnails being created from existing 
-  # thumbnails.
+  # yes - find all files with allowed extensions except those already in the output directory.
+  # This prevents thumbnails being created from existing thumbnails.
   find "$1" -not -regex ".*/$OUTPUT_DIRECTORY/.*" -type f -iregex '.*\.\(jpg\|gif\)$' | while read f
   do
     make_thumbnail "$f"
