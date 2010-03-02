@@ -2,7 +2,8 @@
       <a href="index.shtml">
         <img class="mts_logo" src="images/mts_logo.png" title="Melbourne Testing Services" alt="Melbourne Testing Services" />
       </a>
-      <a href="http://www.nata.asn.au/index.cfm?objectid=91A6633A-65B1-96AB-7EAF2879B94B08C3&amp;facilityFile=1040.xml&amp;action=displayFacility" onclick="return openWindow('http://www.nata.asn.au/index.cfm?objectid=91A6633A-65B1-96AB-7EAF2879B94B08C3&amp;facilityFile=1040.xml&amp;action=displayFacility')">
+      <a href="http://www.nata.asn.au/index.php/scopeinfo/?key=1040" onclick="return openWindow('http://www.nata.asn.au/index.cfm?objectid=91A6633A-65B1-96AB-7EAF2879B94B08C3&amp;facilityFile=1040.xml&amp;action=displayFacility')">
         <img class="nata_logo" src="images/nata_logo.png" title="NATA" alt="NATA" />
       </a>
     </div>
+
