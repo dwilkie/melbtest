@@ -14,6 +14,7 @@
   Version 0.1; 2008-02-20 Page created. - DCW
   Version 0.2; 2008-02-25 Added link to external javascript file. - DCW
   Version 0.3; 2008-02-26 Added include for MTS and NATA logos. - DCW
+  Version 0.4; 2010-03-02 Added new picture for tensile test. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -31,8 +32,8 @@
     <div class ="content">
       <h1>Tensile</h1>
       <p>
-        Tensile testing is performed to determine the tensile strength, proof stress 
-        and ductility properties of materials. Testing may be carried-out on metals, 
+        Tensile testing is performed to determine the tensile strength, proof stress
+        and ductility properties of materials. Testing may be carried-out on metals,
         composites, polymers and timber product in accordance with AS/NZS, ASTM or ISO Standards.
       </p>
       <div class="thumbnail">
@@ -63,8 +64,13 @@
         <a href="images/services/tensile/tens_6.gif" title="See the image full size"><img src="images/services/tensile/thumbs/tens_6.gif" alt="Tensile 7"/></a>
         Tensile Test 7
       </div>
+      <div class="thumbnail">
+        <a href="images/services/tensile/tens_7.jpg" title="See the image full size"><img src="images/services/tensile/thumbs/tens_7.gif" alt="Tensile 8"/></a>
+        Tensile Test 8
+      </div>
     </div>
     <!--add footer-->
     <!--#include virtual="include/footer.ssi" -->
   </body>
 </html>
+

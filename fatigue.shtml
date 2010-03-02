@@ -12,6 +12,7 @@
 
   Modified:
   Version 0.1; 2008-11-22 Page created. - DCW
+  Version 0.2; 2010-03-02 Added new picture. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -39,8 +40,13 @@
         <a href="images/services/fasteners/instron_test_1.jpg" title="See the image full size"><img src="images/services/fatigue/thumbs/instron_test_1.gif" alt="Instron Test"/></a>
         Instron Test
       </div>
+      <div class="thumbnail">
+        <a href="images/services/fatigue/fatigue1.jpg" title="See the image full size"><img src="images/services/fatigue/thumbs/fatigue1.gif" alt="Fatigue Test"/></a>
+        Fatigue Test
+      </div>
     </div>
     <!--add footer-->
     <!--#include virtual="include/footer.ssi" -->
   </body>
 </html>
+

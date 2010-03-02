@@ -14,6 +14,7 @@
   Version 0.1; 2008-02-20 Page created. - DCW
   Version 0.2; 2008-02-25 Added link to external javascript file. - DCW
   Version 0.3; 2008-02-26 Added include for MTS and NATA logos. - DCW
+  Version 0.4; 2010-03-02 Added picture for flexure test. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -34,7 +35,12 @@
         Flexural testing is conducted to determine the bending strength, bending stiffness and load capacity of beams, decks and metallic and timber sections.
       </p>
     </div>
+    <div class="thumbnail">
+      <a href="images/services/flexure/flexure1.jpg" title="See the image full size"><img src="images/services/flexure/thumbs/flexure1.gif" alt="Flexure Test"/></a>
+      Flexure Test
+    </div>
     <!--add footer-->
     <!--#include virtual="include/footer.ssi" -->
   </body>
 </html>
+
