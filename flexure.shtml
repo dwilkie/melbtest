@@ -34,10 +34,10 @@
       <p>
         Flexural testing is conducted to determine the bending strength, bending stiffness and load capacity of beams, decks and metallic and timber sections.
       </p>
-    </div>
-    <div class="thumbnail">
-      <a href="images/services/flexure/flexure1.jpg" title="See the image full size"><img src="images/services/flexure/thumbs/flexure1.gif" alt="Flexure Test"/></a>
-      Flexure Test
+      <div class="thumbnail">
+        <a href="images/services/flexure/flexure1.jpg" title="See the image full size"><img src="images/services/flexure/thumbs/flexure1.gif" alt="Flexure Test"/></a>
+        Flexure Test
+      </div>
     </div>
     <!--add footer-->
     <!--#include virtual="include/footer.ssi" -->
