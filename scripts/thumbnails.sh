@@ -10,15 +10,19 @@
 #   Modified:
 #   Version 0.1; 2008-02-18; Script created. Added optional arguments for processing hidden files and folders
 #                            and for specifying thumbnail size.
+#
 #   Version 0.2; 2008-02-19; Added function for creating a thumbnail given a file path. Added optional
 #                            argument for placing thumbnails under version control. Added regex in
 #                            find commands to prevent thumnails being created from themselves.
+#
 #   Version 0.3; 2008-12-02; Added check to make thumbnail only if it doesn't already exist. Added -mv option 
 #                            to move thumbnail into another folder. Added validation for checking that the
 #                            folder to search for images is valid and exists. Fixed bug where not 
 #                            specifying the second argument to -t caused an infinite loop (see comments
 #                            above option handling code). Fixed bug where output folder was added
 #                            to version control multiple times and subversion was complaining.
+#
+#   Version 0.4; 2010-11-01; Made default output format png
 #
 #   Usage:
 #   thumbnails [OPTIONS]...[FOLDER]...
@@ -43,7 +47,7 @@
 THUMB_WIDTH=200
 
 # Output format
-OUTPUT_FORMAT=gif
+OUTPUT_FORMAT=png
 
 # Output directory name
 OUTPUT_DIRECTORY=thumbs

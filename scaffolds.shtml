@@ -14,6 +14,7 @@
   Version 0.1; 2008-02-20 Page created. - DCW
   Version 0.2; 2008-02-25 Added link to external javascript file. - DCW
   Version 0.3; 2008-02-26 Added include for MTS and NATA logos. - DCW
+  Version 0.4; 2010-11-01 Added more images. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -57,6 +58,14 @@
       <div class="thumbnail">
         <a href="images/services/scaffolds/scaffold_6.gif" title="See the image full size"><img src="images/services/scaffolds/thumbs/scaffold_6.gif" alt="Scaffold 6"/></a>
         Scaffold Test 6
+      </div>
+      <div class="thumbnail">
+        <a href="images/services/scaffolds/top_guardrail_static_inward_test.jpg" title="See the image full size"><img src="images/services/scaffolds/thumbs/top_guardrail_static_inward_test.png" alt="Top Guard Rail Static Inward Test"/></a>
+        Top Guard Rail Static Inward Test
+      </div>
+      <div class="thumbnail">
+        <a href="images/services/scaffolds/top_guardrail_static_outward_test.jpg" title="See the image full size"><img src="images/services/scaffolds/thumbs/top_guardrail_static_outward_test.png" alt="Top Guard Rail Static Outward Test"/></a>
+        Top Guard Rail Static Outward Test
       </div>
     </div>
     <!--add footer-->
