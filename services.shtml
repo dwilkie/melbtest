@@ -15,6 +15,7 @@
   Version 0.2; 2008-02-25 Added link to external javascript file. - DCW
   Version 0.3; 2008-02-26 Added include for MTS and NATA logos. - DCW
   Version 0.4; 2008-11-22 Added link to fatigue page. - DCW
+  Version 0.5; 2010-11-01 Added links to new services. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -39,6 +40,7 @@
         <li><a href="coating_thickness.shtml">Coating Thickness</a></li>
         <li><a href="compression.shtml">Compression</a></li>
         <li><a href="concrete.shtml">Concrete</a></li>
+        <li><a href="covers_and_grates.shtml">Covers &amp; Grates</a></li>
         <li><a href="fasteners.shtml">Fasteners</a></li>
         <li><a href="fatigue.shtml">Fatigue</a></li>
         <li><a href="flexure.shtml">Flexure</a></li>
@@ -50,6 +52,8 @@
         <li><a href="structures.shtml">Structures</a></li>
         <li><a href="tensile.shtml">Tensile</a></li>
         <li><a href="timber.shtml">Timber</a></li>
+		<li><a href="tow_bars_and_couplings.shtml">Tow Bars &amp; Couplings</a></li>
+		<li><a href="vehicle_jacks_and_stands.shtml">Vehicle Jacks &amp; Stands</a></li>
         <li><a href="other.shtml">Other</a></li>
       </ul>
     </div>
