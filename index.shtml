@@ -17,7 +17,7 @@
   Version 0.4; 2008-02-26 Added include for MTS and NATA logos. - DCW
   Version 0.5; 2008-04-13 Added image of lab and google map integration. - DCW
   Version 0.6; 2008-11-22 Added link to fatigue testing. - DCW
-  Version 0.7; 2010-10-29 Fixed link to NATA. - DCW
+  Version 0.7; 2010-10-29 Fixed text link to NATA and made it open in new window. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -36,7 +36,7 @@
     <div class ="content">
       <h1>Home</h1>
       <p>
-        Melbourne Testing Services is a <a href="http://www.nata.asn.au/index.php/scopeinfo/?key=1040">NATA accredited</a> laboratory 
+        Melbourne Testing Services is a <a href="http://www.nata.asn.au/index.php/scopeinfo/?key=1040" onclick="return openWindow('http://www.nata.asn.au/index.php/scopeinfo/?key=1040')">NATA accredited</a> laboratory 
         operating in the eastern suburbs of Melbourne. We specialise in a number of <a href="services.shtml">services</a> including:
       </p>
       <ul>
