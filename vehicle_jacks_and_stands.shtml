@@ -12,6 +12,7 @@
 
   Modified:
   Version 0.1; 2010-11-01 Page created. - DCW
+  Version 0.2; 2010-11-07 Fixed typo and added new image. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -41,7 +42,7 @@
       </div>
       <div class="thumbnail">
         <a href="images/services/vehicle_jacks_and_stands/garage_jack_eccentric_test.jpg" title="See the image full size"><img src="images/services/vehicle_jacks_and_stands/thumbs/garage_jack_eccentric_test.png" alt="Garage Jack Eccentric Test"/></a>
-        Garage Stand Eccentric Test
+        Garage Jack Eccentric Test
       </div>
     </div>
     <!--add footer-->
