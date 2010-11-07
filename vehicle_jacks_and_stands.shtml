@@ -44,6 +44,10 @@
         <a href="images/services/vehicle_jacks_and_stands/garage_jack_eccentric_test.jpg" title="See the image full size"><img src="images/services/vehicle_jacks_and_stands/thumbs/garage_jack_eccentric_test.png" alt="Garage Jack Eccentric Test"/></a>
         Garage Jack Eccentric Test
       </div>
+      <div class="thumbnail">
+        <a href="images/services/vehicle_jacks_and_stands/car_stand_1.gif" title="See the image full size"><img src="images/services/vehicle_jacks_and_stands/thumbs/car_stand_1.gif" alt="Car Stand"/></a>
+        Car Stand Test
+      </div>
     </div>
     <!--add footer-->
     <!--#include virtual="include/footer.ssi" -->

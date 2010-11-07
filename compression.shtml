@@ -14,6 +14,7 @@
   Version 0.1; 2008-02-20 Page created. - DCW
   Version 0.2; 2008-02-25 Added link to external javascript file. - DCW
   Version 0.3; 2008-02-26 Added include for MTS and NATA logos. - DCW
+  Version 0.4; 2010-11-07 Removed "Car Stand Test" image. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -44,10 +45,6 @@
         Boge Test
       </div>
       <div class="thumbnail">
-        <a href="images/services/compression/car_stand_1.gif" title="See the image full size"><img src="images/services/compression/thumbs/car_stand_1.gif" alt="Car Stand"/></a>
-        Car Stand Test
-      </div>
-      <div class="thumbnail">
         <a href="images/services/compression/ceramic_tile_1.gif" title="See the image full size"><img src="images/services/compression/thumbs/ceramic_tile_1.gif" alt="Ceramic Tile"/></a>
         Ceramic Tile Test
       </div>
@@ -76,3 +73,4 @@
     <!--#include virtual="include/footer.ssi" -->
   </body>
 </html>
+
