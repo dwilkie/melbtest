@@ -1,7 +1,7 @@
 /*
   CSS for Melbbourne Testing Services Website
   Author: David Wilkie (dwilkie@gmail.com)
-  todo: 
+  todo:
   */
 
 body
@@ -26,7 +26,7 @@ h1
 }
 
 h2
-{ 
+{
   font-size: 2em;
   font-weight: bold;
   color: #663300;
@@ -188,6 +188,7 @@ div.logos img.nata_logo
 {
   border: none;
   float: right;
+  height: 125px;
 }
 
 /*Style for image of lab */
@@ -204,3 +205,4 @@ div.logos img.nata_logo
   width: 400px;
   height: 400px;
 }
+

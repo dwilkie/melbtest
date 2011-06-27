@@ -15,6 +15,7 @@
   Version 0.2; 2008-02-20 Updated link to navex, footer and stylesheet. - DCW
   Version 0.3; 2008-02-25 Added link to external javascript file. - DCW
   Version 0.4; 2008-02-26 Added include for MTS and NATA logos. - DCW
+  Version 0.5; 2011-06-28 Changed postal address. - DCW
   todo:
   -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -51,9 +52,9 @@
       </p>
       <p>
         <strong>Postal Address:</strong><br />
-        PO Box 2232<br />
-        Ringwood North<br />
-        Victoria 3134
+        PO Box 5111<br />
+        Brandon Park<br />
+        Victoria 3150
       </p>
       <p>
         <strong>Email:</strong><br />
@@ -64,3 +65,4 @@
     <!--#include virtual="include/footer.ssi" -->
   </body>
 </html>
+
