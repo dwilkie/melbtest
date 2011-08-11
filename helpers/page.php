@@ -98,7 +98,7 @@
     $image_path = "$service_path/$filename";
     $thumbnail_path = "$service_path/thumbs/$thumbnail_file";
   ?>
-  <div class=thumbnail>
+  <div class="thumbnail">
       <a <?php echo("href=\"$image_path\""); ?> title="See the image full size">
         <img <?php echo("src=\"$thumbnail_path\" alt=\"$title\""); ?>/>
       </a>
