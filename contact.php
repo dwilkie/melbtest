@@ -3,56 +3,56 @@
 
   $title = "Contact";
 
-  $text = "<p>";
-    $text.= "<strong>";
-      $text.= "Telephone:";
-    $text.= "</strong>";
-    $text.= "<br />";
-    $text.= "+61 (3) 9560 2759";
-  $text.= "</p>";
+  $content = "<p>";
+    $content.= "<strong>";
+      $content.= "Telephone:";
+    $content.= "</strong>";
+    $content.= "<br />";
+    $content.= "+61 (3) 9560 2759";
+  $content.= "</p>";
 
-  $text.= "<p>";
-    $text.= "<strong>";
-      $text.= "Fax:";
-    $text.= "</strong>";
-    $text.= "<br />";
-    $text.= "+61 (3) 9560 2769";
-  $text.= "</p>";
+  $content.= "<p>";
+    $content.= "<strong>";
+      $content.= "Fax:";
+    $content.= "</strong>";
+    $content.= "<br />";
+    $content.= "+61 (3) 9560 2769";
+  $content.= "</p>";
 
-  $text.= "<p>";
-    $text.= "<strong>";
-      $text.= "Visiting Address:";
-    $text.= "</strong>";
-    $text.= "<br />";
-    $text.= "Unit 1/15 Pickering Rd";
-    $text.= "<br />";
-    $text.= "Mulgrave";
-    $text.= "<br />";
-    $text.= "Victoria 3170";
-  $text.= "</p>";
+  $content.= "<p>";
+    $content.= "<strong>";
+      $content.= "Visiting Address:";
+    $content.= "</strong>";
+    $content.= "<br />";
+    $content.= "Unit 1/15 Pickering Rd";
+    $content.= "<br />";
+    $content.= "Mulgrave";
+    $content.= "<br />";
+    $content.= "Victoria 3170";
+  $content.= "</p>";
 
-  $text.= "<p>";
-    $text.= "<strong>";
-      $text.= "Postal Address:";
-    $text.= "</strong>";
-    $text.= "<br />";
-    $text.= "PO Box 5111";
-    $text.= "<br />";
-    $text.= "Brandon Park";
-    $text.= "<br />";
-    $text.= "Victoria 3150";
-  $text.= "</p>";
+  $content.= "<p>";
+    $content.= "<strong>";
+      $content.= "Postal Address:";
+    $content.= "</strong>";
+    $content.= "<br />";
+    $content.= "PO Box 5111";
+    $content.= "<br />";
+    $content.= "Brandon Park";
+    $content.= "<br />";
+    $content.= "Victoria 3150";
+  $content.= "</p>";
 
-  $text.= "<p>";
-    $text.= "<strong>";
-      $text.= "Email:";
-    $text.= "</strong>";
-    $text.= "<br />";
-    $text.= "<a href=\"mailto:info@melbtest.com.au\">";
-      $text.= "info@melbtest.com.au";
-    $text.= "</a>";
-  $text.= "</p>";
+  $content.= "<p>";
+    $content.= "<strong>";
+      $content.= "Email:";
+    $content.= "</strong>";
+    $content.= "<br />";
+    $content.= "<a href=\"mailto:info@melbtest.com.au\">";
+      $content.= "info@melbtest.com.au";
+    $content.= "</a>";
+  $content.= "</p>";
 
-  echo page($title, $text);
+  echo page($title, $content);
 ?>
 
