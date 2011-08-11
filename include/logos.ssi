@@ -1,9 +1,0 @@
-    <div class="logos">
-      <a href="index.shtml">
-        <img class="mts_logo" src="images/mts_logo.png" title="Melbourne Testing Services" alt="Melbourne Testing Services" />
-      </a>
-      <a href="http://www.nata.asn.au/index.php/scopeinfo/?key=1040" onclick="return openWindow('http://www.nata.asn.au/index.php/scopeinfo/?key=1040')">
-        <img class="nata_logo" src="images/nata_logo.png" title="NATA" alt="NATA" />
-      </a>
-    </div>
-

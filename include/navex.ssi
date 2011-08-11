@@ -1,9 +1,0 @@
-    <div class="navex">
-      <ul>
-        <li><a href="index.shtml">Home</a></li>
-        <li><a href="about.shtml">About Us</a></li>
-        <li><a href="services.shtml">Services</a></li>
-        <li><a href="contact.shtml">Contact</a></li>
-        <li><a href="feedback.php">Feedback</a></li>
-      </ul>
-    </div>

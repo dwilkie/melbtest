@@ -38,7 +38,7 @@
       //add logos
       include("include/logos.ssi");
       //add navbar
-      include("include/navex.ssi"); 
+      include("include/navex.ssi");
     ?>
     <div class ="content">
       <h1>Feedback</h1>
@@ -53,13 +53,13 @@
         $criteria[5] = "Reporting";
         $criteria[6] = "Appropriate explanation of test results";
         $criteria[7] = "After testing communication";
-        
+
         // rating choices for feedback (add more here)
         $ratings[0] = "N/A";
         $ratings[1] = "Low";
         $ratings[2] = "Medium";
         $ratings[3] = "High";
-        
+
         //function for validating names (only accepts characters from A-Z)
         function validate_name($rString)
         {
@@ -67,14 +67,14 @@
           $pattern = "^[a-zA-Z]+$";
           return ereg($pattern, $mod_string);
         }
-        
+
         //function for validating strings (does not allow angled brackets
         function validate_string($rString)
         {
           $mod_string = str_replace(' ', '', $rString);
           $pattern = "^[^<>]+$";
           return ereg($pattern, $mod_string);
-        }        
+        }
 
         //function for validating email addresses
         function validate_email($rString)
@@ -88,13 +88,13 @@
         {
           return 'Can only contain letters from A-Z';
         }
-        
+
         //returns the text to display for an invalid string
         function valid_string_text()
         {
           return 'Must not contain angle brackets (&lt; &gt;)';
-        }        
-        
+        }
+
         //check if submit button has been pressed by user
         if (isset($_POST['submit_form']))
         {
@@ -106,7 +106,7 @@
 
             //validate contact name
             if (!empty($_POST['contact_name']))
-            {            
+            {
               if (!validate_name($_POST['contact_name']))
               {
                 $error = true;
@@ -118,7 +118,7 @@
               $error = true;
               $error_text = $error_text."\r\n".'<li>Contact name is blank. <a href="#contact_name">Complete</a></li>';
             }
-            
+
             //validate the company
             if (!empty($_POST['company']))
             {
@@ -128,7 +128,7 @@
                 $error_text = $error_text."\r\n".'<li>Company not valid - '.valid_name_text().'. <a href="#company">Fix</a></li>';
               }
             }
-            
+
             //validate the email address
             if (!empty($_POST['email']))
             {
@@ -143,7 +143,7 @@
                 $error = true;
                 $error_text = $error_text."\r\n".'<li>Email address is blank. <a href="#email">Complete</a></li>';
             }
-            
+
             //validate the comments
             if (!empty($_POST['other_comments']))
             {
@@ -165,7 +165,7 @@
               }
               $criterion_nr += 1;
             }
-            
+
             if($error)
             {
               //there were problem(s) with the input so display the errors to the user
@@ -200,7 +200,7 @@
 
                     // contact name
                     $message .= 'My name:&nbsp;'.$_POST['contact_name'].'<br />';
-                    
+
                     if (!empty($_POST['company']))
                     {
                       //company (if entered)
@@ -208,10 +208,10 @@
                     }
                     //email
                     $message .= 'My email:&nbsp;<a href="mailto:'.$_POST['email'].'?subject=RE: '.$subject.'">'.$_POST['email'].'</a><br /><br />';
-                    
+
                     //feedback
                     $message .= '<strong>My feedback:</strong><br />';
-                    
+
                     $criterion_nr = 1;
                     foreach ($criteria as $criterion)
                     {
@@ -219,14 +219,14 @@
                       $message .= '<em>'.$criterion_nr.'.&nbsp;'.$criterion.':</em>&nbsp;<strong>'.$ratings[$rating_index].'</strong><br />';
                       $criterion_nr += 1;
                     }
-                    
+
                     //other comments
                     if (!empty($_POST['other_comments']))
                     {
                       $message .= '<br /><strong>Other comments:</strong><br />';
                       $message .= $_POST['other_comments'];
                     }
-                    
+
                     //end of message
                     $message .= '
                     <br /><br />
@@ -256,7 +256,7 @@
             //customer details section
             echo '<h2>Customer Details</h2>'."\r\n";
             echo '<p class= "customer_details">'."\r\n";
-            
+
               //contact name
               echo '<label class = "text" for = "contact_name">*Contact Name:</label>'."\r\n";
               if (isset($_POST["contact_name"]) && $error)
@@ -268,7 +268,7 @@
                 echo '<input type = "text" id="contact_name" name="contact_name" />'."\r\n";
               }
               echo '<br />'."\r\n";
-              
+
               //company
               echo '<label class = "text" for = "company">Company:</label>'."\r\n";
               if (isset($_POST["company"]) && $error)
@@ -280,7 +280,7 @@
                 echo '<input type = "text" id="company" name="company" />'."\r\n";
               }
               echo '<br />'."\r\n";
-              
+
               //email
               echo '<label class = "text" for = "email">*Email:</label>'."\r\n";
               if (isset($_POST["email"]) && $error)
@@ -292,28 +292,28 @@
                 echo '<input type = "text" id="email" name="email" />'."\r\n";
               }
             echo '</p>'."\r\n";
-            
+
             //feedback section
             echo '<h2>Feedback</h2>'."\r\n";
             echo '<p class = "feedback_criteria">'."\r\n";
 
             $criterion_nr = 1;
-            
+
             foreach ($criteria as $criterion)
             {
               // output a comment e.g. <!-- Criterion 1 (Friendliness of staff) -->
               echo '<!--Criterion '.$criterion_nr.' ('.$criterion.')-->'."\r\n";
-              
+
               // output the actual criteria followed by a colon (:)
               echo $criterion_nr.'.&nbsp;'.$criterion.': <br />'."\r\n";
-              
+
               $rating_nr = 1;
 
               foreach ($ratings as $rating)
               {
                 // output a comment e.g. <!-- Rating 1 (N/A) -->
                 echo '<!--Rating '.$rating_nr.' ('.$rating.')-->'."\r\n";
-                
+
                 // check if the current criteria has been already rated by the user
                 if (isset($_POST["criteria_".$criterion_nr]) && $error)
                 {
@@ -334,7 +334,7 @@
                   // the user has not yet rated this criteria so leave it unchecked
                   echo '<input type="radio" id="criteria_'.$criterion_nr.'_'.$rating_nr.'" name="criteria_'.$criterion_nr.'" value = "'.$rating_nr.'" />'."\r\n";
                 }
-                
+
                 // create the label for the rating
                 echo '<label class = "button" for="criteria_'.$criterion_nr.'_'.$rating_nr.'">'.$rating.'</label>'."\r\n";
                 $rating_nr += 1;
@@ -343,7 +343,7 @@
               $criterion_nr += 1;
             }
             echo '</p>'."\r\n";
-            
+
             //other comments
             echo '<!--other comments -->'."\r\n";
             echo '<p class = "feedback_criteria">'."\r\n";
@@ -370,7 +370,8 @@
     <!--footer section-->
     <?php
       //add footer
-      include("include/footer.ssi"); 
+      include("include/footer.ssi");
     ?>
   </body>
 </html>
+
