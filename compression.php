@@ -1,7 +1,9 @@
+<?php require("helpers/page.php"); ?>
+<?php page("Compression"); ?>
+    <p>
+      Compression testing is conducted to determine the compressive strength of materials including metals, composites, polymers and rock in accordance with AS/NZS, ASTM or ISO Standards. Crush testing to determine the degree of permanent compression in components is also conducted.
+    </p>
 <?php
-  require('helpers/page.php');
-  $title = "Compression";
-  $text = "Compression testing is conducted to determine the compressive strength of materials including metals, composites, polymers and rock in accordance with AS/NZS, ASTM or ISO Standards. Crush testing to determine the degree of permanent compression in components is also conducted.";
   $images = array(
     array("Aluminium Beam Test", "al_beam_1.gif"),
     array("Boge Test", "boge.gif"),
@@ -16,6 +18,7 @@
     array("Leaf Spring", "leaf_spring.jpg"),
     array("Steel and Aluminium Cans", "steel_&_aluminium_cans.jpg")
   );
-  echo service_page($title, $text, $images);
+  image_gallery($images);
+  footer();
 ?>
 

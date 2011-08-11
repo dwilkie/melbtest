@@ -1,7 +1,9 @@
+<?php require("helpers/page.php"); ?>
+<?php page("Scaffolds"); ?>
+    <p>
+      Testing of scaffold systems, roof anchor devices or scaffold components to the applicable Australian Standards is provided.
+    </p>
 <?php
-  require('helpers/page.php');
-  $title = "Scaffolds";
-  $text = "Testing of scaffold systems, roof anchor devices or scaffold components to the applicable Australian Standards is provided.";
   $images = array(
     array("Scaffold Test 1", "scaffold_1.gif"),
     array("Scaffold Test 2", "scaffold_2.gif"),
@@ -16,6 +18,7 @@
     array("Scaffold Caster", "scaffold_castor.jpg"),
     array("Scaffold Stair", "scaffold_stair.jpg")
   );
-  echo service_page($title, $text, $images);
+  image_gallery($images);
+  footer();
 ?>
 

@@ -1,7 +1,9 @@
+<?php require("helpers/page.php"); ?>
+<?php page("Structures"); ?>
+    <p>
+      Large structures including formwork, composite slabs, steel decking, roadside safety barrier railing and posts can be tested in our 500kN servo-hydraulic testing frame for structural integrity and ultimate load capacity.
+    </p>
 <?php
-  require('helpers/page.php');
-  $title = "Structures";
-  $text = "Large structures including formwork, composite slabs, steel decking, roadside safety barrier railing and posts can be tested in our 500kN servo-hydraulic testing frame for structural integrity and ultimate load capacity.";
   $images = array(
     array("Structural Test 1", "struct_1.gif"),
     array("Structural Test 2", "struct_2.gif"),
@@ -15,6 +17,7 @@
     array("Structural Test 10", "struct_11.gif"),
     array("Structural Test 11", "struct_12.gif"),
   );
-  echo service_page($title, $text, $images);
+  image_gallery($images);
+  footer();
 ?>
 
