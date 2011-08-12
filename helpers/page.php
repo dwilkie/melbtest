@@ -81,8 +81,6 @@
       <a class="validate" href="http://jigsaw.w3.org/css-validator/" onclick="return openWindow('http://jigsaw.w3.org/css-validator/validator?uri=http://www.melbtest.com.au/stylesheets/style.css')">
         <img style="border:0;width:88px;height:31px" src="images/vcss.png" alt="Valid CSS" />
       </a>
-      <br />
-      Webmaster: <a href="mailto:dwilkie@gmail.com?subject=MTS Website">David Wilkie</a>
     </p>
   </div>
 </body>
