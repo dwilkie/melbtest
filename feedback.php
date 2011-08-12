@@ -1,47 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-  FILE: feedback.php
-
-  A feedback form which captures feedback and emails results
-
-  Notes:
-  This page validates to XHTML strict.
-
-  Author:
-  David Wilkie (dwilkie@gmail.com)
-
-  Modified:
-  Version 0.1; 2008-01-20 Document created. - DCW
-  Version 0.2; 2008-01-31 Fixed validation of email and company, updated div and class tags for styling,  modified feedback form to remember choices on invalid submissions, integrated emailing of results,
-                                             added comments, added all feedback criteria and added other comments text area. - DCW
-  Version 0.3; 2008-02-02 Initialised all variables and simplyfied code for displaying criteria into a loop. - DCW
-  Version 0.4; 2008-02-04 Modified criterion and rating numbers to make them more user readable, added comments to feedback form creation,
-                                              added new-lines to php outputs for readability and started modifying email content. - DCW
-  Version 0.5; 2008-02-05 Added validation to ensure all feedback criteria is rated, finished email content, moved all dynamic data into single php block, added validation for additional comments section,
-                                              added validation for blank contact name and email, modified code to clear form fields on successful submission, added reset button, added include for navbar,
-                                              modified error messages to contain internal links to fields, added footer to external ssi and included it in this document and added more comments to code. - DCW
-  Version 0.6; 2008-02-06 Modified title and h1 element. - DCW
-  Version 0.7; 2008-02-20 Updated link to navex, footer and stylesheet. - DCW
-  Version 0.8; 2008-02-25 Added link to external javascript file. - DCW
-  Version 0.9; 2008-02-26 Added include for MTS and NATA logos. - DCW
-  todo:
-  -->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <title>Melbourne Testing Services::Feedback</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-    <script src="javascript/script.js" type="text/javascript"></script>
-  </head>
-  <body>
-    <?php
-      //add logos
-      include("include/logos.ssi");
-      //add navbar
-      include("include/navex.ssi");
-    ?>
-    <div class ="content">
-      <h1>Feedback</h1>
+<?php require("helpers/page.php"); ?>
+<?php page("Feedback");?>
       <!--start dynamic content-->
       <?php
         // criteria for feedback (add more here)
@@ -365,13 +323,5 @@
         echo '</fieldset>'."\r\n";
       echo '</form>'."\r\n";
     ?>
-    <!-- end dynamic content-->
-    </div>
-    <!--footer section-->
-    <?php
-      //add footer
-      include("include/footer.ssi");
-    ?>
-  </body>
-</html>
+    <?php footer(); ?>
 
